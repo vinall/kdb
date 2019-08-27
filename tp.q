@@ -1,11 +1,11 @@
-.log.info:{if[(-10h <> type x ) and (10h <> type x); .log.info "string type only";'x]; show ((string .z.Z)," ", x); };
-.arg.opt:{[k;d] if [first ((.Q.opt .z.x) k) like "" ; :d]; (.Q.ty d)$((.Q.opt .z.x) k) } ;
-.arg.req:{[k;d] if [first ((.Q.opt .z.x) k) like ""; .log.info (string k)," param is required"; 'k]; (.Q.ty d)$((.Q.opt .z.x) k)  };
-importfile:{[f] if[() ~ key hsym `$f; .log.info f," path not present";:()]; system("l ", f); };
+//.log.info:{if[(-10h <> type x ) and (10h <> type x); .log.info "string type only";'x]; show ((string .z.Z)," ", x); };
+//.arg.opt:{[k;d] if [first ((.Q.opt .z.x) k) like "" ; :d]; (.Q.ty d)$((.Q.opt .z.x) k) } ;
+//.arg.req:{[k;d] if [first ((.Q.opt .z.x) k) like ""; .log.info (string k)," param is required"; 'k]; (.Q.ty d)$((.Q.opt .z.x) k)  };
+//importfile:{[f] if[() ~ key hsym `$f; .log.info f," path not present";:()]; system("l ", f); };
 
 t:.arg.opt[`schemas;""];
 t:"," vs raze t;
-importfile each t;
+.utils.loadfile each t;
 
 .z.pc : {
     .log.info "client disconnected handle ", (string x);
