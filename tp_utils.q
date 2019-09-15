@@ -16,10 +16,10 @@
 .service.pub:{
     if[0=count .service.client[x];:()];
     d:.service.client[x];
-    k: first key d;
+    k: key d;
     f: value d;
      
-    {[tab;port;func;out] neg[port](func;tab;out);}[x;k;;y] each f;
+    {[tab;port_func;out] port:port_func[0] ; func:port_func[1]; neg[port](func;tab;out);}[x;;y] each k,'f;
     
  };
 .service.upd:{
