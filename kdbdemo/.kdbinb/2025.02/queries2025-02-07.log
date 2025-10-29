@@ -1,0 +1,290 @@
+/
+File format:
+ <timestamp>, <instance uri>, <instance name>, <roundtrip, nanos>, <result type or error message>
+ <Full query>
+ <line separator>
+\
+/ 2025-02-07D11:36:37.579534700, `:localhost:9003, localhost:9003, 304609500, object[]
+{
+    / fix for root namespace
+    v:$[x=y; x; ` sv x,y];
+    / list of all inner namespaces - we get all keys that has ` as the first key and it's value is (::) - that's namespace
+    ns:l where {$[`~first key x; (::)~x[`]; 0b]} each ` sv'v,'l:key[v] except `;
+    / get all functions, tables, variables in current namespace
+    r:(system') ("fav",\:" "),\:string v;
+    / Functions
+    fns:{v:$[x=`; y; ` sv x,y]; t:type value v; a:$[112h=t; enlist `; 4h=type first s:2 value/v; s 1; $[t in 101 103h; enlist `x; t in 102 106 107 108 109 110 111h; `x`y; enlist `]]; (y;t;a)}[v;] each r[0];
+    / return the table details in format (name;size;meta;keys)
+    tbs:{v:$[x=`; y; ` sv x,y]; (y;count value v;0!meta v;keys v)}[v;] each r[1];
+    / variables are anything except namespaces and tables. We get (name;type;description) for each
+    /   for dictionary - (size;keys type; values type)
+    / Description depends on the type and is:
+    vrs:{v:$[x=`; get y; x[y]]; t:type v; (y;t;$[99h=t; (count v;type key v;type value v); ()])}[v;] each r[2] except ns,r[1];
+    / return final result; (namespace;function;tables;variables;list of inner namespaces or an error)
+    (y;fns;tbs;vrs;.z.s[v;] each ns)
+ }[`; `]
+
+/ 2025-02-07D11:36:44.925991900, `:localhost:9003, localhost:9003, 11631500, 'time
+(`time`sym`price`size`cond)@\:(`time$();`$();`float$();`int$();())
+
+/ 2025-02-07D11:36:55.782643100, `:localhost:9003, localhost:9003, 10610800, 'type
+(`time`sym`price`size`cond)@/:(`time$();`$();`float$();`int$();())
+
+/ 2025-02-07D11:38:52.397218100, `:localhost:9003, localhost:9003, 12318800, unaryoperator
+l:`:/tmp/logfile
+
+/ 2025-02-07D11:38:57.454814400, `:localhost:9003, localhost:9003, 11772400, 'type
+`t insert (10?.z.P;10#`appl;100.1;100)
+
+/ 2025-02-07D11:39:00.006825600, `:localhost:9003, localhost:9003, 12777500, unaryoperator
+t:([] time:`timestamp$();symbol:`$();lastprice:`float$();lastqty:`long$());
+
+/ 2025-02-07D11:39:00.785709500, `:localhost:9003, localhost:9003, 11527600, long[]
+`t insert (10?.z.P;10#`appl;100.1;100)
+
+/ 2025-02-07D11:39:05.362357100, `:localhost:9003, localhost:9003, 10779900, unaryoperator
+count 
+
+/ 2025-02-07D11:39:07.332648300, `:localhost:9003, localhost:9003, 11984700, long
+count t
+
+/ 2025-02-07D11:39:10.689933900, `:localhost:9003, localhost:9003, 10726900, flip
+t
+
+/ 2025-02-07D11:39:41.714015800, `:localhost:9003, localhost:9003, 16778800, 'type
+l enlist(`upd;`trade;t)
+
+/ 2025-02-07D11:39:45.470777700, `:localhost:9003, localhost:9003, 11381100, flip
+t
+
+/ 2025-02-07D11:39:52.322743400, `:localhost:9003, localhost:9003, 15445000, 'type
+l enlist(`upd;`trade;flip t)
+
+/ 2025-02-07D11:40:41.108761400, `:localhost:9003, localhost:9003, 9496700, 'type
+l enlist(`upd;`trade;enlist t)
+
+/ 2025-02-07D11:40:43.398359, `:localhost:9003, localhost:9003, 11311700, 'type
+l enlist(`upd;`trade;t)
+
+/ 2025-02-07D11:42:52.652767200, `:localhost:9003, localhost:9003, 9894700, flip
+t
+
+/ 2025-02-07D11:42:55.745706100, `:localhost:9003, localhost:9003, 9392000, 'type
+l enlist(`upd;`trade;t)
+
+/ 2025-02-07D11:43:02.219550800, `:localhost:9003, localhost:9003, 24580800, integer
+hopen l
+
+/ 2025-02-07D11:43:03.697635800, `:localhost:9003, localhost:9003, 9473600, 'type
+l enlist(`upd;`trade;t)
+
+/ 2025-02-07D11:43:08.363024600, `:localhost:9003, localhost:9003, 11339100, object[]
+(`upd;`trade;t)
+
+/ 2025-02-07D11:43:15.303172400, `:localhost:9003, localhost:9003, 9339100, flip
+t
+
+/ 2025-02-07D11:43:23.190426, `:localhost:9003, localhost:9003, 9605700, 'type
+l enlist(`upd;`trade;enlist t)
+
+/ 2025-02-07D11:43:32.443973200, `:localhost:9003, localhost:9003, 10361600, '/tmp/logfile
+get l
+
+/ 2025-02-07D11:43:39.288490100, `:localhost:9003, localhost:9003, 10858300, 'read0l
+read0l
+
+/ 2025-02-07D11:43:41.950962800, `:localhost:9003, localhost:9003, 9766500, object[]
+read0 l
+
+/ 2025-02-07D11:43:44.535764500, `:localhost:9003, localhost:9003, 8979900, object[]
+read0[l]
+
+/ 2025-02-07D11:43:47.528040800, `:localhost:9003, localhost:9003, 9628400, byte[]
+read1[l]
+
+/ 2025-02-07D11:44:06.051180100, `:localhost:9003, localhost:9003, 10302900, 'type
+l enlist(`upd;`t;t)
+
+/ 2025-02-07D11:44:09.282362500, `:localhost:9003, localhost:9003, 9919600, flip
+t
+
+/ 2025-02-07D11:44:11.187599600, `:localhost:9003, localhost:9003, 10612100, 'type
+l enlist(`upd;`t;flip t)
+
+/ 2025-02-07D11:44:14.751260400, `:localhost:9003, localhost:9003, 10084800, ' 
+l enlist(`upd;`t;0: t)
+
+/ 2025-02-07D11:44:19.566458700, `:localhost:9003, localhost:9003, 10346800, string
+l
+
+/ 2025-02-07D11:44:22.963052500, `:localhost:9003, localhost:9003, 9322000, object[]
+read0 l
+
+/ 2025-02-07D11:44:27.776579100, `:localhost:9003, localhost:9003, 9849800, byte[]
+read1[l]
+
+/ 2025-02-07D11:44:35.164261, `:localhost:9003, localhost:9003, 83316000, object[]
+\cat /tmp/logfile
+
+/ 2025-02-07D11:44:37.645260800, `:localhost:9003, localhost:9003, 9271300, ' 
+l enlist(`upd;`t;0: t)
+
+/ 2025-02-07D11:44:42.233803600, `:localhost:9003, localhost:9003, 9741800, 'type
+l enlist(`upd;`t;t)
+
+/ 2025-02-07D11:44:48.721283100, `:localhost:9003, localhost:9003, 9855800, object[]
+(`upd;`t;t)
+
+/ 2025-02-07D11:45:01.438848300, `:localhost:9003, localhost:9003, 12309900, object[]
+(`upd;`t;enlist t)
+
+/ 2025-02-07D11:45:11.241466500, `:localhost:9003, localhost:9003, 13347400, object[]
+(`upd;`t;t)
+
+/ 2025-02-07D11:45:16.670770300, `:localhost:9003, localhost:9003, 9137600, object[]
+enlist(`upd;`t;t)
+
+/ 2025-02-07D11:45:25.670382300, `:localhost:9003, localhost:9003, 9207000, 'type
+l enlist(`upd;`t;t)
+
+/ 2025-02-07D11:45:26.494510500, `:localhost:9003, localhost:9003, 9131400, 'type
+l enlist(`upd;`t;t)
+
+/ 2025-02-07D11:52:21.047281200, `:localhost:9003, localhost:9003, 10288100, flip
+t
+
+/ 2025-02-07D12:02:07.543460400, `:localhost:9003, localhost:9003, 12573400, unaryoperator
+tp:hopen `::5010
+
+/ 2025-02-07D12:02:09.819145100, `:localhost:9003, localhost:9003, 8587600, integer
+tp
+
+/ 2025-02-07D12:02:12.281022100, `:localhost:9003, localhost:9003, 9083400, integer
+tp
+
+/ 2025-02-07D12:02:29.891992700, `:localhost:9003, localhost:9003, 9754700, flip
+t
+
+/ 2025-02-07D12:02:31.884543300, `:localhost:9003, localhost:9003, 13696300, 'length
+tp(`.u.upd;`trade;t)
+
+/ 2025-02-07D12:02:35.497509200, `:localhost:9003, localhost:9003, 9235700, flip
+t
+
+/ 2025-02-07D12:02:41.022618, `:localhost:9003, localhost:9003, 9445000, 'type
+tp(`.u.upd;`trade;flip t)
+
+/ 2025-02-07D12:02:46.584648800, `:localhost:9003, localhost:9003, 8954400, flip
+t
+
+/ 2025-02-07D12:03:08.767850600, `:localhost:9003, localhost:9003, 9419000, string
+update time:`time$time from `t
+
+/ 2025-02-07D12:03:09.813176300, `:localhost:9003, localhost:9003, 12319000, 'length
+tp(`.u.upd;`trade;t)
+
+/ 2025-02-07D12:03:13.274888300, `:localhost:9003, localhost:9003, 9410900, flip
+t
+
+/ 2025-02-07D12:03:15.513816800, `:localhost:9003, localhost:9003, 9974100, 'type
+tp(`.u.upd;`trade;flip t)
+
+/ 2025-02-07D12:03:20.534413900, `:localhost:9003, localhost:9003, 9912800, 'length
+tp(`.u.upd;`trade;t)
+
+/ 2025-02-07D12:03:26.752956300, `:localhost:9003, localhost:9003, 8988400, 'type
+key t
+
+/ 2025-02-07D12:03:28.487393900, `:localhost:9003, localhost:9003, 9707800, 'type
+key t
+
+/ 2025-02-07D12:03:30.200202200, `:localhost:9003, localhost:9003, 9719700, string[]
+keys t
+
+/ 2025-02-07D12:03:33.439402400, `:localhost:9003, localhost:9003, 10672200, 'length
+tp(`.u.upd;`trade;t)
+
+/ 2025-02-07D12:03:45.310505600, `:localhost:9003, localhost:9003, 10077200, 'length
+tp(`.u.upd;`trade;enlist t)
+
+/ 2025-02-07D12:03:52.061192200, `:localhost:9003, localhost:9003, 10248000, 'length
+tp(`.u.upd;`trade;1#t)
+
+/ 2025-02-07D12:03:58.449348200, `:localhost:9003, localhost:9003, 11475600, 'type
+tp(`.u.upd;`trade;flip 1#t)
+
+/ 2025-02-07D12:04:03.787525200, `:localhost:9003, localhost:9003, 9984100, dict
+flip 1#t
+
+/ 2025-02-07D12:04:17.621130, `:localhost:9003, localhost:9003, 10813900, 'length
+tp(`.u.upd;`trade;value flip 1#t)
+
+/ 2025-02-07D12:04:26.401807600, `:localhost:9003, localhost:9003, 9252000, object[]
+value flip 1#t
+
+/ 2025-02-07D12:04:33.201791200, `:localhost:9003, localhost:9003, 9572900, 'length
+tp(`.u.upd;`trade;raze value flip 1#t)
+
+/ 2025-02-07D12:04:37.100291200, `:localhost:9003, localhost:9003, 8733500, 'length
+tp(`.u.upd;`trade;1#t)
+
+/ 2025-02-07D12:06:50.132764900, `:localhost:9003, localhost:9003, 10802200, unaryoperator
+tp:hopen `::5010
+
+/ 2025-02-07D12:06:51.844391400, `:localhost:9003, localhost:9003, 9462300, string
+update time:`time$time from `t
+
+/ 2025-02-07D12:06:54.071589200, `:localhost:9003, localhost:9003, 16659400, 'length
+tp(`.u.upd;`trade;1#t)
+
+/ 2025-02-07D12:08:09.093418900, `:localhost:9003, localhost:9003, 11887800, 'type
+tp(`.u.upd;`trade;key 1#t)
+
+/ 2025-02-07D12:10:50.248630900, `:localhost:9003, localhost:9003, 9018600, dict
+meta t
+
+/ 2025-02-07D12:12:01.587381500, `:localhost:9003, localhost:9003, 9172900, 'hop. OS reports: Connection refused
+tp:hopen `::5010
+
+/ 2025-02-07D12:12:24.155134900, `:localhost:9003, localhost:9003, 12718100, unaryoperator
+tp:hopen `::5010
+
+/ 2025-02-07D12:12:27.480449100, `:localhost:9003, localhost:9003, 9521400, dict
+meta t
+
+/ 2025-02-07D12:12:28.949114700, `:localhost:9003, localhost:9003, 8376900, 'type
+tp(`.u.upd;`trade;key 1#t)
+
+/ 2025-02-07D12:12:44.204218100, `:localhost:9003, localhost:9003, 13101500, unaryoperator
+tp:hopen `::5010
+
+/ 2025-02-07D12:12:45.340760200, `:localhost:9003, localhost:9003, 8628800, 'type
+tp(`.u.upd;`trade;key 1#t)
+
+/ 2025-02-07D12:12:46.160280300, `:localhost:9003, localhost:9003, 8656400, 'type
+tp(`.u.upd;`trade;key 1#t)
+
+/ 2025-02-07D12:12:46.355502400, `:localhost:9003, localhost:9003, 11220800, 'type
+tp(`.u.upd;`trade;key 1#t)
+
+/ 2025-02-07D12:12:46.528650800, `:localhost:9003, localhost:9003, 9280100, 'type
+tp(`.u.upd;`trade;key 1#t)
+
+/ 2025-02-07D12:12:51.191121800, `:localhost:9003, localhost:9003, 10258300, 'length
+tp(`.u.upd;`trade; 1#t)
+
+/ 2025-02-07D12:15:53.600055400, `:localhost:9003, localhost:9003, 10084000, unaryoperator
+tp:hopen `::5010
+
+/ 2025-02-07D12:15:55.537120500, `:localhost:9003, localhost:9003, 9406800, 'length
+tp(`.u.upd;`trade; 1#t)
+
+/ 2025-02-07D12:21:41.945058500, `:localhost:9003, localhost:9003, 9983900, 'Cannot write to handle 8. OS reports: Bad file descriptor
+tp(`.u.upd;`trade; 1#t)
+
+/ 2025-02-07D12:21:43.787564100, `:localhost:9003, localhost:9003, 10135000, unaryoperator
+tp:hopen `::5010
+
+/ 2025-02-07D12:21:46.323015, `:localhost:9003, localhost:9003, 9544700, 'length
+tp(`.u.upd;`trade; 1#t)
+

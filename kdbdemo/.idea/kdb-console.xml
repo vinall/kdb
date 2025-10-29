@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="KdbConsole">
+    <console scope="localsrv" instance="localsrv/ubuntusrv1" connected="false">
+      <options showWatches="false" tabsProportion="0.5" watchesProportion="0.5" softWrap="true" showHistory="true" scrollToTheEnd="true" activeSplitType="NO" />
+    </console>
+    <console scope="localsrv" instance="localsrv/ubuntusrv" connected="false">
+      <options showWatches="false" tabsProportion="0.5" watchesProportion="0.5" softWrap="true" showHistory="true" scrollToTheEnd="true" activeSplitType="NO" />
+    </console>
+  </component>
+</project>

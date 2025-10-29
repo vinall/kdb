@@ -1,0 +1,183 @@
+/
+File format:
+ <timestamp>, <instance uri>, <instance name>, <roundtrip, nanos>, <result type or error message>
+ <Full query>
+ <line separator>
+\
+/ 2025-06-15D11:45:16.159012600, `:localhost:5010, localsrv/ubuntusrv, 20582200, unaryoperator
+.arg.opt:{[k;d] if [first ((.Q.opt .z.x) k) like "" ; :d]; first (.Q.ty d)$((.Q.opt .z.x) k) } ;
+
+/ 2025-06-15D11:45:36.217010100, `:localhost:5010, localsrv/ubuntusrv, 21382000, long
+.arg.opt[`some;10]
+
+/ 2025-06-15D11:45:46.207714600, `:localhost:5010, localsrv/ubuntusrv, 35478100, long
+.arg.opt[`some;10]
+
+/ 2025-06-15D11:46:01.794539200, `:localhost:5010, localsrv/ubuntusrv, 13787000, function
+.arg.opt
+
+/ 2025-06-15D11:46:14.184035200, `:localhost:5010, localsrv/ubuntusrv, 11278900, unaryoperator
+k:`some
+
+/ 2025-06-15D11:46:16.924269500, `:localhost:5010, localsrv/ubuntusrv, 11321200, unaryoperator
+d:10
+
+/ 2025-06-15D11:46:39.603071100, `:localhost:5010, localsrv/ubuntusrv, 11250300, 'type
+first ((.Q.opt .z.w) k)
+
+/ 2025-06-15D11:46:45.099437100, `:localhost:5010, localsrv/ubuntusrv, 11400000, object[]
+first ((.Q.opt .z.x) k)
+
+/ 2025-06-15D11:49:55.706645600, `:localhost:5010, localsrv/ubuntusrv, 18431700, unaryoperator
+.arg.opt:{[k;d] if [null first ((.Q.opt .z.x) k) ; :d]; first (.Q.ty d)$((.Q.opt .z.x) k) } ;
+
+/ 2025-06-15D11:49:58.872099300, `:localhost:5010, localsrv/ubuntusrv, 11676100, 'type
+.arg.opt[`some;10]
+
+/ 2025-06-15D11:50:08.827345800, `:localhost:5010, localsrv/ubuntusrv, 10497400, object[]
+((.Q.opt .z.x) k)
+
+/ 2025-06-15D11:50:14.986774500, `:localhost:5010, localsrv/ubuntusrv, 10826200, object[]
+null first ((.Q.opt .z.x) k)
+
+/ 2025-06-15D11:50:26.766375, `:localhost:5010, localsrv/ubuntusrv, 10771700, object[]
+null ((.Q.opt .z.x) k)
+
+/ 2025-06-15D11:50:39.296192100, `:localhost:5010, localsrv/ubuntusrv, 10211000, long
+count ((.Q.opt .z.x) k) 
+
+/ 2025-06-15D11:50:53.637962100, `:localhost:5010, localsrv/ubuntusrv, 10909300, unaryoperator
+.arg.opt:{[k;d] if [count ((.Q.opt .z.x) k) ; :d]; first (.Q.ty d)$((.Q.opt .z.x) k) } ;
+
+/ 2025-06-15D11:50:56.203603600, `:localhost:5010, localsrv/ubuntusrv, 10049300, long
+.arg.opt[`some;10]
+
+/ 2025-06-15D11:51:33.402897, `:localhost:5010, localsrv/ubuntusrv, 10599300, character
+(.Q.ty d)
+
+/ 2025-06-15D11:51:37.959523800, `:localhost:5010, localsrv/ubuntusrv, 10156500, '(
+((.Q.opt .z.x)
+
+/ 2025-06-15D11:51:40.044512900, `:localhost:5010, localsrv/ubuntusrv, 9945600, object[]
+((.Q.opt .z.x) k)
+
+/ 2025-06-15D11:51:48.313448400, `:localhost:5010, localsrv/ubuntusrv, 10675500, unaryoperator
+.arg.opt:{[k;d] if [not count ((.Q.opt .z.x) k) ; :d]; first (.Q.ty d)$((.Q.opt .z.x) k) } ;
+
+/ 2025-06-15D11:51:51.203898800, `:localhost:5010, localsrv/ubuntusrv, 10288700, long
+.arg.opt[`some;10]
+
+/ 2025-06-15D11:52:19.178787600, `:localhost:5010, localsrv/ubuntusrv, 10391100, dict
+.Q.opt .z.x
+
+/ 2025-06-15D11:56:08.606910400, `:localhost:5010, localsrv/ubuntusrv, 265320800, 'An established connection was aborted by the software in your host machine
+.Q.opt .z.x
+
+/ 2025-06-15D11:56:27.247903300, `:localhost:5010, localsrv/ubuntusrv, 11139700, unaryoperator
+cmdline:.Q.opt .z.x
+
+/ 2025-06-15D11:56:28.637582900, `:localhost:5010, localsrv/ubuntusrv, 11403400, dict
+cmdline
+
+/ 2025-06-15D11:56:59.716689800, `:localhost:5010, localsrv/ubuntusrv, 10913800, 'k
+count cmdline[k]
+
+/ 2025-06-15D11:57:02.623938600, `:localhost:5010, localsrv/ubuntusrv, 10026600, unaryoperator
+k:`some
+
+/ 2025-06-15D11:57:03.250685200, `:localhost:5010, localsrv/ubuntusrv, 10046600, unaryoperator
+d:10
+
+/ 2025-06-15D11:57:15.977760800, `:localhost:5010, localsrv/ubuntusrv, 11189300, boolean
+not count cmdline[k] 
+
+/ 2025-06-15D11:57:20.404568700, `:localhost:5010, localsrv/ubuntusrv, 10589900, boolean
+not count cmdline[k]
+
+/ 2025-06-15D11:57:24.486544700, `:localhost:5010, localsrv/ubuntusrv, 9575700, long
+count cmdline[k]
+
+/ 2025-06-15D11:57:27.567117400, `:localhost:5010, localsrv/ubuntusrv, 9644600, object[]
+cmdline[k]
+
+/ 2025-06-15D11:57:47.468741800, `:localhost:5010, localsrv/ubuntusrv, 10041300, object[]
+cmdline[k]
+
+/ 2025-06-15D11:58:12.209261300, `:localhost:5010, localsrv/ubuntusrv, 10484100, character
+.Q.ty cmdline[k]
+
+/ 2025-06-15D11:58:27.430713, `:localhost:5010, localsrv/ubuntusrv, 9565700, character
+(.Q.ty d)
+
+/ 2025-06-15D11:58:55.075943800, `:localhost:5010, localsrv/ubuntusrv, 10487800, long[]
+(.Q.ty d)$(cmdline[k])
+
+/ 2025-06-15D11:58:58.253154, `:localhost:5010, localsrv/ubuntusrv, 9949500, long
+first (.Q.ty d)$(cmdline[k])
+
+/ 2025-06-15D11:59:01.616352300, `:localhost:5010, localsrv/ubuntusrv, 10044500, unaryoperator
+.arg.opt:{[k;d] if [not count cmdline[k] ; :d]; first (.Q.ty d)$(cmdline[k]) } ;
+
+/ 2025-06-15D11:59:04.644335100, `:localhost:5010, localsrv/ubuntusrv, 9988900, function
+.arg.opt
+
+/ 2025-06-15D11:59:09.620247700, `:localhost:5010, localsrv/ubuntusrv, 9854700, long
+.arg.opt[`some;10]
+
+/ 2025-06-15D11:59:23.531783800, `:localhost:5010, localsrv/ubuntusrv, 9930700, unaryoperator
+.arg.opt:{[k;d] if [not count cmdline[k] ; :d]; first (.Q.ty d)$(cmdline[k]) } ;
+
+/ 2025-06-15D11:59:27.049406700, `:localhost:5010, localsrv/ubuntusrv, 9234200, function
+.arg.opt
+
+/ 2025-06-15D11:59:31.651905900, `:localhost:5010, localsrv/ubuntusrv, 10762000, long
+.arg.opt[`some;10]
+
+/ 2025-06-15D11:59:41.732690400, `:localhost:5010, localsrv/ubuntusrv, 9310200, unaryoperator
+.arg.opt:{[k;d] if [not count cmdline[k] ; :d]; first (.Q.ty d)$(cmdline[k]) } ;
+
+/ 2025-06-15D11:59:42.657551700, `:localhost:5010, localsrv/ubuntusrv, 9253700, long
+.arg.opt[`some;10]
+
+/ 2025-06-15D12:01:23.030726700, `:localhost:5010, localsrv/ubuntusrv, 10356100, long
+.arg.opt[`some;10]
+
+/ 2025-06-15D12:01:26.440865700, `:localhost:5010, localsrv/ubuntusrv, 9606800, unaryoperator
+cmdline:.Q.opt .z.x
+
+/ 2025-06-15D12:01:28.861329300, `:localhost:5010, localsrv/ubuntusrv, 9947200, dict
+cmdline
+
+/ 2025-06-15D12:01:33.257165, `:localhost:5010, localsrv/ubuntusrv, 9699600, unaryoperator
+.arg.opt:{[k;d] if [not count cmdline[k] ; :d]; first (.Q.ty d)$(cmdline[k]) } ;
+
+/ 2025-06-15D12:01:34.339487800, `:localhost:5010, localsrv/ubuntusrv, 10166800, long
+.arg.opt[`some;10]
+
+/ 2025-06-15D12:01:41.753819100, `:localhost:5010, localsrv/ubuntusrv, 9483800, long
+first (.Q.ty d)$(cmdline[k])
+
+/ 2025-06-15D12:01:46.993142500, `:localhost:5010, localsrv/ubuntusrv, 9385200, long[]
+(.Q.ty d)$(cmdline[k])
+
+/ 2025-06-15D12:01:51.070230100, `:localhost:5010, localsrv/ubuntusrv, 9781000, unaryoperator
+.arg.opt:{[k;d] if [not count cmdline[k] ; :d];  (.Q.ty d)$(cmdline[k]) } ;
+
+/ 2025-06-15D12:01:52.158494100, `:localhost:5010, localsrv/ubuntusrv, 8869800, long[]
+.arg.opt[`some;10]
+
+/ 2025-06-15D12:01:56.460283900, `:localhost:5010, localsrv/ubuntusrv, 9523600, short
+type .arg.opt[`some;10]
+
+/ 2025-06-15D12:02:04.112857200, `:localhost:5010, localsrv/ubuntusrv, 8844900, long
+.arg.opt[`some;10][0]
+
+/ 2025-06-15D12:02:15.127511, `:localhost:5010, localsrv/ubuntusrv, 10055200, short
+type .arg.opt[`some;10][0]
+
+/ 2025-06-15D12:02:28.252832400, `:localhost:5010, localsrv/ubuntusrv, 10486000, unaryoperator
+.arg.opt:{[k;d] if [not count cmdline[k] ; :d]; first  (.Q.ty d)$(cmdline[k]) } ;
+
+/ 2025-06-15D12:02:32.436553800, `:localhost:5010, localsrv/ubuntusrv, 9276100, long
+.arg.opt[`some;10]
+

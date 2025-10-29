@@ -1,0 +1,315 @@
+/
+File format:
+ <timestamp>, <instance uri>, <instance name>, <roundtrip, nanos>, <result type or error message>
+ <Full query>
+ <line separator>
+\
+/ 2025-06-29D11:18:51.003356100, `:localhost:5010, localsrv/ubuntusrv, 20373900, 'date
+trade:([] time:10?.z.T;sym:10?`3;date?.z.D)
+
+/ 2025-06-29D11:18:58.185490700, `:localhost:5010, localsrv/ubuntusrv, 12781800, unaryoperator
+trade:([] time:10?.z.T;sym:10?`3;10?.z.D)
+
+/ 2025-06-29D11:18:59.551134300, `:localhost:5010, localsrv/ubuntusrv, 13622501, flip
+trade
+
+/ 2025-06-29D11:20:24.766953900, `:localhost:5010, localsrv/ubuntusrv, 46714900, string
+`:newhdb/2025.06.29/trade/ set .Q.en[`:newhdb;trade]
+
+/ 2025-06-29D11:20:31.214348500, `:localhost:5010, localsrv/ubuntusrv, 28287200, unaryoperator
+\l newhdb
+
+/ 2025-06-29D11:20:39.398635500, `:localhost:5010, localsrv/ubuntusrv, 16988700, flip
+select from trade where date=max date
+
+/ 2025-06-29D11:21:18.094266600, `:localhost:5010, localsrv/ubuntusrv, 18648300, unaryoperator
+trade:([] time:10?.z.T;sym:10?`3;date:10?.z.D)
+
+/ 2025-06-29D11:21:19.141419, `:localhost:5010, localsrv/ubuntusrv, 11236900, flip
+trade
+
+/ 2025-06-29D11:21:23.151164800, `:localhost:5010, localsrv/ubuntusrv, 42383200, string
+`:newhdb/2025.06.29/trade/ set .Q.en[`:newhdb;trade]
+
+/ 2025-06-29D11:21:25.606500900, `:localhost:5010, localsrv/ubuntusrv, 13385600, unaryoperator
+\l newhdb
+
+/ 2025-06-29D11:21:26.293244600, `:localhost:5010, localsrv/ubuntusrv, 11952200, flip
+select from trade where date=max date
+
+/ 2025-06-29D11:43:04.720084400, `:localhost:5010, localsrv/ubuntusrv, 258310700, object[]
+\rm -rf newhdb
+
+/ 2025-06-29D11:43:43.969087500, `:localhost:5010, localsrv/ubuntusrv, 10429200, 'par
+.Q.dpft[`:newhdb;2025.06.29;`sym;`trade]
+
+/ 2025-06-29D11:43:54.543709400, `:localhost:5010, localsrv/ubuntusrv, 21501600, 'newhdb. OS reports: Is a directory
+\l newhdb
+
+/ 2025-06-29D11:44:04.376759300, `:localhost:5010, localsrv/ubuntusrv, 126908000, object[]
+\mkdir newhdb
+
+/ 2025-06-29D11:44:05.862797200, `:localhost:5010, localsrv/ubuntusrv, 11577400, 'par
+.Q.dpft[`:newhdb;2025.06.29;`sym;`trade]
+
+/ 2025-06-29D11:44:40.374615800, `:localhost:5010, localsrv/ubuntusrv, 11811900, 'table. OS reports: No such file or directory
+\l table
+
+/ 2025-06-29D11:46:30.308968800, `:localhost:5010, localsrv/ubuntusrv, 14343900, 'par
+.Q.dpft[`$":newhdb";2025.06.29;`sym;`trade]
+
+/ 2025-06-29D11:46:35.253125, `:localhost:5010, localsrv/ubuntusrv, 10761600, dict
+trade
+
+/ 2025-06-29D11:46:37.700824600, `:localhost:5010, localsrv/ubuntusrv, 11011600, unaryoperator
+trade:([] time:10?.z.T;sym:10?`3;date:10?.z.D)
+
+/ 2025-06-29D11:46:38.646000900, `:localhost:5010, localsrv/ubuntusrv, 9724100, flip
+trade
+
+/ 2025-06-29D11:46:39.932814800, `:localhost:5010, localsrv/ubuntusrv, 38987000, string
+.Q.dpft[`$":newhdb";2025.06.29;`sym;`trade]
+
+/ 2025-06-29D11:46:45.477108500, `:localhost:5010, localsrv/ubuntusrv, 15533500, unaryoperator
+\l newhdb
+
+/ 2025-06-29D11:46:50.125668300, `:localhost:5010, localsrv/ubuntusrv, 12847200, dict
+meta trade
+
+/ 2025-06-29D11:49:08.915584800, `:localhost:5010, localsrv/ubuntusrv, 10742000, 'assign
+sample:([] time:10?.z.T;sym:10?`3;date:10?.z.D;desc:enlist 10#"apple")
+
+/ 2025-06-29D11:49:15.948160500, `:localhost:5010, localsrv/ubuntusrv, 12845600, 'length
+sample:([] time:10?.z.T;sym:10?`3;date:10?.z.D;description:enlist 10#"apple")
+
+/ 2025-06-29D11:49:21.700467200, `:localhost:5010, localsrv/ubuntusrv, 12586600, unaryoperator
+sample:([] time:10?.z.T;sym:10?`3;date:10?.z.D;description: 10#"apple")
+
+/ 2025-06-29D11:49:23.053230500, `:localhost:5010, localsrv/ubuntusrv, 12237600, flip
+sample
+
+/ 2025-06-29D11:49:30.276100400, `:localhost:5010, localsrv/ubuntusrv, 13269800, 'length
+sample:([] time:10?.z.T;sym:10?`3;date:10?.z.D;description:enlist enlist 10#"apple")
+
+/ 2025-06-29D11:49:35.394624800, `:localhost:5010, localsrv/ubuntusrv, 10352700, object[]
+enlist  10#"apple"
+
+/ 2025-06-29D11:49:38.610875100, `:localhost:5010, localsrv/ubuntusrv, 9697300, char[]
+10#"apple"
+
+/ 2025-06-29D11:49:55.578854400, `:localhost:5010, localsrv/ubuntusrv, 13512300, object[]
+10#enlist "apple"
+
+/ 2025-06-29D11:49:58.170931500, `:localhost:5010, localsrv/ubuntusrv, 10926400, unaryoperator
+sample:([] time:10?.z.T;sym:10?`3;date:10?.z.D;description:10#enlist "apple")
+
+/ 2025-06-29D11:49:59.474528, `:localhost:5010, localsrv/ubuntusrv, 12007100, flip
+sample
+
+/ 2025-06-29D11:50:08.922544100, `:localhost:5010, localsrv/ubuntusrv, 52633400, string
+.Q.dpft[`$":newhdb";2025.06.29;`sym;`sample]
+
+/ 2025-06-29D11:50:32.188354700, `:localhost:5010, localsrv/ubuntusrv, 12466300, unaryoperator
+\l /home/vinay/newkdb/newhdb/newhdb/newhdb
+
+/ 2025-06-29D11:50:33.666490500, `:localhost:5010, localsrv/ubuntusrv, 44945300, string
+.Q.dpft[`$":newhdb";2025.06.29;`sym;`sample]
+
+/ 2025-06-29D11:50:37.122448600, `:localhost:5010, localsrv/ubuntusrv, 24262000, unaryoperator
+\l /home/vinay/newkdb/newhdb/newhdb/newhdb
+
+/ 2025-06-29D11:51:25.929105500, `:localhost:5010, localsrv/ubuntusrv, 352361300, 'null
+.Q.dpft[`$":/home/vinay/newkdb/newhdb";2025.06.29;`sym;`sample]
+
+/ 2025-06-29D11:51:46.944970500, `:localhost:5010, localsrv/ubuntusrv, 14052900, 'type
+.Q.dpft[`$":/home/vinay/newkdb/newhdb";2025.06.29;`sym;`sample]
+
+/ 2025-06-29D11:52:20.339164200, `:localhost:5010, localsrv/ubuntusrv, 11042600, unaryoperator
+trade:([] time:10?.z.T;sym:10?`3;date:10?.z.D)
+
+/ 2025-06-29D11:52:21.642005, `:localhost:5010, localsrv/ubuntusrv, 10095900, unaryoperator
+sample:([] time:10?.z.T;sym:10?`3;date:10?.z.D;description:10#enlist "apple")
+
+/ 2025-06-29D11:52:25.738109, `:localhost:5010, localsrv/ubuntusrv, 52378900, string
+.Q.dpft[`$":/home/vinay/newkdb/newhdb";2025.06.29;`sym;`sample]
+
+/ 2025-06-29D11:52:36.066571800, `:localhost:5010, localsrv/ubuntusrv, 31254100, string
+.Q.dpft[`$":/home/vinay/newkdb/newhdb";2025.06.29;`sym;`trade]
+
+/ 2025-06-29D11:52:47.610807200, `:localhost:5010, localsrv/ubuntusrv, 16221500, unaryoperator
+\l /home/vinay/newkdb/newhdb
+
+/ 2025-06-29D11:52:55.203164200, `:localhost:5010, localsrv/ubuntusrv, 12040400, flip
+select from sample where date=max date
+
+/ 2025-06-29D12:02:43.673188200, `:localhost:5010, localsrv/ubuntusrv, 10714600, long
+count `:/home/vinay/newkdb/newhdb/description
+
+/ 2025-06-29D12:02:46.970743500, `:localhost:5010, localsrv/ubuntusrv, 12128800, '/home/vinay/newkdb/newhdb/description. OS reports: No such file or directory
+count get `:/home/vinay/newkdb/newhdb/description
+
+/ 2025-06-29D12:02:59.505828600, `:localhost:5010, localsrv/ubuntusrv, 10067000, long
+count get `:/home/vinay/newkdb/newhdb/2025.06.29/sample/description
+
+/ 2025-06-29D12:03:05.724813500, `:localhost:5010, localsrv/ubuntusrv, 9888100, long
+count `:/home/vinay/newkdb/newhdb/2025.06.29/sample/description
+
+/ 2025-06-29D12:03:07.962551200, `:localhost:5010, localsrv/ubuntusrv, 13291800, long
+count get `:/home/vinay/newkdb/newhdb/2025.06.29/sample/description
+
+/ 2025-06-29D12:03:10.731579400, `:localhost:5010, localsrv/ubuntusrv, 11392200, unaryoperator
+cnt:count get `:/home/vinay/newkdb/newhdb/2025.06.29/sample/description
+
+/ 2025-06-29D12:04:02.450925, `:localhost:5010, localsrv/ubuntusrv, 18147500, string
+@[`:/home/vinay/newkdb/newhdb/2025.06.29/sample/;`newcol;:;10#`]
+
+/ 2025-06-29D12:04:50.114088500, `:localhost:5010, localsrv/ubuntusrv, 13311300, string[]
+get `:/home/vinay/newkdb/newhdb/2025.06.29/sample/.d
+
+/ 2025-06-29D12:05:24.666100600, `:localhost:5010, localsrv/ubuntusrv, 13666100, string
+`:/home/vinay/newkdb/newhdb/2025.06.29/sample/.d set ((get `:/home/vinay/newkdb/newhdb/2025.06.29/sample/.d),`newcol)
+
+/ 2025-06-29D12:05:33.577120, `:localhost:5010, localsrv/ubuntusrv, 11965100, string[]
+get `:/home/vinay/newkdb/newhdb/2025.06.29/sample/.d
+
+/ 2025-06-29D12:05:38.912832700, `:localhost:5010, localsrv/ubuntusrv, 14213900, unaryoperator
+\l /home/vinay/newkdb/newhdb
+
+/ 2025-06-29D12:05:43.155272700, `:localhost:5010, localsrv/ubuntusrv, 32227500, dict
+meta sample
+
+/ 2025-06-29D12:07:16.263526400, `:localhost:5010, localsrv/ubuntusrv, 14285000, projection
+.Q.dpft
+
+/ 2025-06-29D12:21:19.128902200, `:localhost:5010, localsrv/ubuntusrv, 14756300, 'type
+4 {1+til x}\[1]
+
+/ 2025-06-29D12:21:24.439590500, `:localhost:5010, localsrv/ubuntusrv, 10158200, 'type
+4 {1+til x}\ 1
+
+/ 2025-06-29D12:22:00.032275400, `:localhost:5010, localsrv/ubuntusrv, 11367300, 'type
+4 {1+til x}\ 1
+
+/ 2025-06-29D12:22:10.054141100, `:localhost:5010, localsrv/ubuntusrv, 8765700, 'type
+4 {til x}\ 1
+
+/ 2025-06-29D12:22:14.926981500, `:localhost:5010, localsrv/ubuntusrv, 15922600, ' 
+{til x}\ 1
+
+/ 2025-06-29D12:22:41.157369600, `:localhost:5010, localsrv/ubuntusrv, 12305400, ' 
+{0N!x;til x}\ 1
+
+/ 2025-06-29D12:22:51.013693700, `:localhost:5010, localsrv/ubuntusrv, 9557700, long[]
+{0N!x;til x} 1
+
+/ 2025-06-29D12:22:57.229175700, `:localhost:5010, localsrv/ubuntusrv, 9666100, long[]
+{0N!x;1+til x} 1
+
+/ 2025-06-29D12:23:01.957226400, `:localhost:5010, localsrv/ubuntusrv, 14985300, 'Cannot write to handle 10. OS reports: Bad file descriptor
+10 {0N!x;1+til x} 1
+
+/ 2025-06-29D12:23:08.068649600, `:localhost:5010, localsrv/ubuntusrv, 10744700, 'type
+10 {0N!x;1+til x}\ 1
+
+/ 2025-06-29D12:23:39.631794600, `:localhost:5010, localsrv/ubuntusrv, 10943300, 'type
+10 {0N!x;til x}\ 1
+
+/ 2025-06-29D12:23:45.783734300, `:localhost:5010, localsrv/ubuntusrv, 10329500, 'type
+10 {til x}\ 1
+
+/ 2025-06-29D12:23:48.532611400, `:localhost:5010, localsrv/ubuntusrv, 11148100, 'type
+10 {til x}/ 1
+
+/ 2025-06-29D12:24:07.156560500, `:localhost:5010, localsrv/ubuntusrv, 9989600, ' 
+{til x}/ 1
+
+/ 2025-06-29D12:24:17.021791900, `:localhost:5010, localsrv/ubuntusrv, 13348700, long[]
+til 1
+
+/ 2025-06-29D12:24:19.556584100, `:localhost:5010, localsrv/ubuntusrv, 9871900, long[]
+til 2
+
+/ 2025-06-29D12:24:37.012535300, `:localhost:5010, localsrv/ubuntusrv, 10109500, 'type
+10 {til x}\1
+
+/ 2025-06-29D12:24:46.212146300, `:localhost:5010, localsrv/ubuntusrv, 9750700, 'type
+10 {1+til x}\[1]
+
+/ 2025-06-29D12:24:51.428311, `:localhost:5010, localsrv/ubuntusrv, 8627200, 'type
+10 {til x}\[1]
+
+/ 2025-06-29D12:24:54.507538400, `:localhost:5010, localsrv/ubuntusrv, 9057700, 'type
+{til x}\[1]
+
+/ 2025-06-29D12:25:02.515915800, `:localhost:5010, localsrv/ubuntusrv, 8955200, 'type
+{til x}\[enlist 1]
+
+/ 2025-06-29D12:25:42.491989300, `:localhost:5010, localsrv/ubuntusrv, 10414900, 'Cannot write to handle 10. OS reports: Bad file descriptor
+10 {1+til last x}\[1]
+
+/ 2025-06-29D12:25:59.356905700, `:localhost:5010, localsrv/ubuntusrv, 9134600, object[]
+10 {1+til last x}\ enlist 1 
+
+/ 2025-06-29D12:26:18.211425100, `:localhost:5010, localsrv/ubuntusrv, 8441900, function
+{1+til last x}
+
+/ 2025-06-29D12:26:20.050953, `:localhost:5010, localsrv/ubuntusrv, 8896700, long[]
+{1+til last x} 1
+
+/ 2025-06-29D12:26:23.091149900, `:localhost:5010, localsrv/ubuntusrv, 8911800, long[]
+{1+til last x} enlist 1
+
+/ 2025-06-29D12:26:30.626009500, `:localhost:5010, localsrv/ubuntusrv, 10066600, long[]
+{1+til last x} 1
+
+/ 2025-06-29D12:26:40.163087400, `:localhost:5010, localsrv/ubuntusrv, 9445400, object[]
+10 {1+til 1+last x}\ enlist 1 
+
+/ 2025-06-29D12:26:48.810741900, `:localhost:5010, localsrv/ubuntusrv, 8906900, object[]
+9 {1+til 1+last x}\ enlist 1 
+
+/ 2025-06-29D12:27:27.386334500, `:localhost:5010, localsrv/ubuntusrv, 9912400, object[]
+10{x,-1#x+1}\1
+
+/ 2025-06-29D12:27:32.498409800, `:localhost:5010, localsrv/ubuntusrv, 9710300, object[]
+9 {1+til 1+last x}\  1
+
+/ 2025-06-29D12:27:39.922443, `:localhost:5010, localsrv/ubuntusrv, 8944800, '"ts 9 {1+til 1+last x}\  1"
+\ts 9 {1+til 1+last x}\  1
+
+/ 2025-06-29D12:27:45.353218500, `:localhost:5010, localsrv/ubuntusrv, 9104200, '"ts 9 {1+til 1+last x}\  1"
+\ts 9 {1+til 1+last x}\  1
+
+/ 2025-06-29D12:27:47.338348900, `:localhost:5010, localsrv/ubuntusrv, 11276600, 'ts
+ts 9 {1+til 1+last x}\  1
+
+/ 2025-06-29D12:27:49.769798400, `:localhost:5010, localsrv/ubuntusrv, 8672400, '"ts 9 {1+til 1+last x}\  1"
+\ts 9 {1+til 1+last x}\  1
+
+/ 2025-06-29D12:27:51.561182700, `:localhost:5010, localsrv/ubuntusrv, 9819600, object[]
+10{x,-1#x+1}\1
+
+/ 2025-06-29D12:27:54.002263300, `:localhost:5010, localsrv/ubuntusrv, 10117500, '"t 10{x,-1#x+1}\1"
+\t 10{x,-1#x+1}\1
+
+/ 2025-06-29D12:27:59.618004100, `:localhost:5010, localsrv/ubuntusrv, 8959600, '"t {10{x,-1#x+1}\1}[]"
+\t {10{x,-1#x+1}\1}[]
+
+/ 2025-06-29D12:28:02.562138500, `:localhost:5010, localsrv/ubuntusrv, 9149800, '"t {10{x,-1#x+1}\1}[]"
+\t {10{x,-1#x+1}\1}[]
+
+/ 2025-06-29D12:28:09.513931300, `:localhost:5010, localsrv/ubuntusrv, 18569400, long[]
+\ts cnt:count get `:/home/vinay/newkdb/newhdb/2025.06.29/sample/description
+
+/ 2025-06-29D12:28:18.738876700, `:localhost:5010, localsrv/ubuntusrv, 8330800, object[]
+{10{x,-1#x+1}\1}[]
+
+/ 2025-06-29D12:28:25.512931, `:localhost:5010, localsrv/ubuntusrv, 9258500, object[]
+10{x,-1#x+1}\1
+
+/ 2025-06-29D12:28:33.921707200, `:localhost:5010, localsrv/ubuntusrv, 8472300, 'x
+9 1+til 1+last x
+
+/ 2025-06-29D12:28:43.601577700, `:localhost:5010, localsrv/ubuntusrv, 8607500, object[]
+9 {1+til 1+last x}\1
+

@@ -1,0 +1,105 @@
+/
+File format:
+ <timestamp>, <instance uri>, <instance name>, <roundtrip, nanos>, <result type or error message>
+ <Full query>
+ <line separator>
+\
+/ 2025-05-29D21:38:51.819045700, `:localhost:5011, localsrv/ubuntusrv1, 17953100, unaryoperator
+.z.pg : {[x]
+    query:x[`query];
+    cb:x[`cb];
+    srv:x[`srv];
+    $[null srv; [res:value query; cb[res]; ] ; ::  ];
+    };
+
+/ 2025-05-29D21:38:55.871697600, `:localhost:5011, localsrv/ubuntusrv1, 11870100, 'type
+.z.pg
+
+/ 2025-05-29D21:38:59.546127900, `:localhost:5011, localsrv/ubuntusrv1, 10679800, 'type
+.z.pg
+
+/ 2025-05-29D21:39:05.143310500, `:localhost:5011, localsrv/ubuntusrv1, 10976600, 'type
+.z.pg : {[x]
+    query:x[`query];
+    cb:x[`cb];
+    srv:x[`srv];
+    $[null srv; [res:value query; cb[res]; ] ; ::  ];
+    };
+
+/ 2025-05-29D21:39:14.998212300, `:localhost:5011, localsrv/ubuntusrv1, 10700200, 'type
+.z.pg : {[x]
+    query:x[`query];
+    cb:x[`cb];
+    srv:x[`srv];
+    $[null srv; [res:value query; cb[res]; ] ; ::  ]
+    };
+
+/ 2025-05-29D21:39:26.888240100, `:localhost:5011, localsrv/ubuntusrv1, 11051000, 'type
+.z.pg:{
+    query:x[`query];
+    cb:x[`cb];
+    srv:x[`srv];
+    $[null srv; [res:value query; cb[res]; ] ; ::  ]
+    }
+
+/ 2025-05-29D21:39:30.127885400, `:localhost:5011, localsrv/ubuntusrv1, 10617700, 'type
+.z.pg
+
+/ 2025-05-29D21:39:33.108078600, `:localhost:5011, localsrv/ubuntusrv1, 10540200, 'type
+1+!
+
+/ 2025-05-29D21:39:34.150456800, `:localhost:5011, localsrv/ubuntusrv1, 10741800, 'type
+1+1
+
+/ 2025-05-29D21:39:35.072951400, `:localhost:5011, localsrv/ubuntusrv1, 10305100, 'type
+1+1
+
+/ 2025-05-29D21:39:35.364874, `:localhost:5011, localsrv/ubuntusrv1, 10595900, 'type
+1+1
+
+/ 2025-05-29D21:39:35.601599400, `:localhost:5011, localsrv/ubuntusrv1, 10943700, 'type
+1+1
+
+/ 2025-05-29D21:39:36.244786400, `:localhost:5011, localsrv/ubuntusrv1, 11192600, 'type
+1+1
+
+/ 2025-05-29D21:39:36.813008400, `:localhost:5011, localsrv/ubuntusrv1, 10152600, 'type
+1+1
+
+/ 2025-05-29D21:39:49.550354600, `:localhost:5011, localsrv/ubuntusrv1, 11092800, 'type
+.z.pg
+
+/ 2025-05-29D21:39:57.732229600, `:localhost:5011, localsrv/ubuntusrv1, 10150800, 'type
+{
+    query:x[`query];
+    cb:x[`cb];
+    srv:x[`srv];
+    $[null srv; [res:value query; cb[res]; ] ; ::  ]
+    }
+
+/ 2025-05-29D21:40:06.824550300, `:localhost:5011, localsrv/ubuntusrv1, 10447000, 'type
+{ 1+1}
+
+/ 2025-05-29D21:40:16.058525200, `:localhost:5010, localsrv/ubuntusrv, 11630300, function
+{ 1+1}
+
+/ 2025-05-29D21:40:58.193777200, `:localhost:5010, localsrv/ubuntusrv, 10415500, function
+{ 1+1}
+
+/ 2025-05-29D21:41:05.582754800, `:localhost:5011, localsrv/ubuntusrv1, 174563000, long
+1+1
+
+/ 2025-05-29D21:41:08.782819, `:localhost:5011, localsrv/ubuntusrv1, 11403600, function
+{ 1+1}
+
+/ 2025-05-29D21:41:19.513996300, `:localhost:5011, localsrv/ubuntusrv1, 10652100, unaryoperator
+.z.pg : { 
+    query:x[`query];
+    cb:x[`cb];
+    srv:x[`srv];
+    $[null srv; [res:value query; cb[res]; ] ; ::  ]
+    }
+
+/ 2025-05-29D21:41:21.202385100, `:localhost:5011, localsrv/ubuntusrv1, 9979300, 'type
+.z.pg
+

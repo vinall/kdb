@@ -1,0 +1,42 @@
+/
+File format:
+ <timestamp>, <instance uri>, <instance name>, <roundtrip, nanos>, <result type or error message>
+ <Full query>
+ <line separator>
+\
+/ 2025-05-16D14:19:39.924388900, `:localhost:5010, localsrv/ubuntusrv, 21797900, long
+1+1
+
+/ 2025-05-16D14:20:18.509317200, `:localhost:5010, localsrv/ubuntusrv, 15128100, 's
+"S=|" 0: s
+
+/ 2025-05-16D14:20:20.472481700, `:localhost:5010, localsrv/ubuntusrv, 14301200, unaryoperator
+s:"8=FIX.4.4|9=178|35=8|49=A|56=B|1=accountA|6=229.6125|11=00000001|12=|13=|14=6000|15=GBp|17=100000002|19=|21=1|29=1|30=XLON|31=229.65|32=4500|37=|38=10000|39=1|41=|44=|48=VOD.L|50=AB|52=20131218-09:01:03|54=1|55=VOD|58=|59=1|60=20131218-09:01:03|10=197 "
+
+/ 2025-05-16D14:20:21.352595200, `:localhost:5010, localsrv/ubuntusrv, 13187900, object[]
+"S=|" 0: s
+
+/ 2025-05-16D14:20:27.467444, `:localhost:5010, localsrv/ubuntusrv, 13283200, dict
+(!)."S=|" 0: s
+
+/ 2025-05-16D14:20:31.929096700, `:localhost:5010, localsrv/ubuntusrv, 12143500, 'length
+flip (!)."S=|" 0: s
+
+/ 2025-05-16D14:20:36.245613600, `:localhost:5010, localsrv/ubuntusrv, 19273800, flip
+enlist (!)."S=|" 0: s
+
+/ 2025-05-16D14:20:48.256011800, `:localhost:5010, localsrv/ubuntusrv, 13285800, 'getAllTags
+getAllTags
+
+/ 2025-05-16D14:20:50.582564700, `:localhost:5010, localsrv/ubuntusrv, 12079500, 'getAllTags
+getAllTags
+
+/ 2025-05-16D14:20:52.069348400, `:localhost:5010, localsrv/ubuntusrv, 11272800, unaryoperator
+getAllTags:{[msg](!)."S=|"0:msg}
+
+/ 2025-05-16D14:20:53.120480800, `:localhost:5010, localsrv/ubuntusrv, 11580500, unaryoperator
+getTag:{[tag;msg](getAllTags[msg])[tag]}
+
+/ 2025-05-16D14:20:54.265293900, `:localhost:5010, localsrv/ubuntusrv, 11375700, 'type
+fixTbl:(uj/) {flip fixTagToName[key d]!value enlist each d:getAllTags x} each s
+

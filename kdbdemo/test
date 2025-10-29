@@ -1,0 +1,4 @@
+.cbmgr.sub .cbargs.fargs[`tp01;`trade;`trade_dest;{x}];
+.cbmgr.sub .cbargs.fargs[`;`trade_dest;`trade_dest1;{x}];
+
+data:(); `data upsert flip (`time`sym`price`size)!(4?.z.P;4?`4;4?10.0;4?100i)

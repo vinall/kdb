@@ -1,0 +1,39 @@
+/
+File format:
+ <timestamp>, <instance uri>, <instance name>, <roundtrip, nanos>, <result type or error message>
+ <Full query>
+ <line separator>
+\
+/ 2025-04-26D07:32:16.153735900, `:localhost:9081, localsrv/ubuntusrv, 16622200, unaryoperator
+s:"8=FIX.4.4|9=178|35=8|49=A|56=B|1=accou ntA|6=229.6125|11=00000001|12=|13=|14=6000|15=GBp|17=100000002|19=|21=1|29=1|30=XLON|31=229.65|32=4500|37=|38=10000|39=1|41=|44=|48=VOD.L|50=AB|52=20131218-09:01:03|54=1|55=VOD|58=|59=1|60=20131218-09:01:03|10=197 "
+
+/ 2025-04-26D07:32:18.003543100, `:localhost:9081, localsrv/ubuntusrv, 6782600, unaryoperator
+s:"8=FIX.4.4|9=178|35=8|49=A|56=B|1=accountA|6=229.6125|11=00000001|12=|13=|14=6000|15=GBp|17=100000002|19=|21=1|29=1|30=XLON|31=229.65|32=4500|37=|38=10000|39=1|41=|44=|48=VOD.L|50=AB|52=20131218-09:01:03|54=1|55=VOD|58=|59=1|60=20131218-09:01:03|10=197 "
+
+/ 2025-04-26D07:33:09.321733500, `:localhost:9081, localsrv/ubuntusrv, 6366400, 'rank
+(!)."S=|"
+
+/ 2025-04-26D07:33:12.344886300, `:localhost:9081, localsrv/ubuntusrv, 7000000, 'rank
+(!)."S=|" s
+
+/ 2025-04-26D07:33:17.801236, `:localhost:9081, localsrv/ubuntusrv, 7344200, dict
+(!)."S=|"0:s
+
+/ 2025-04-26D07:33:49.122087900, `:localhost:9081, localsrv/ubuntusrv, 6034600, unaryoperator
+fixTbl:(uj/)
+
+/ 2025-04-26D07:34:21.476613400, `:localhost:9081, localsrv/ubuntusrv, 6658000, 'getAllTags
+fixTbl:(uj/) {flip fixTagToName[key d]!value enlist each d:getAllTags x} each s
+
+/ 2025-04-26D07:34:37.738400700, `:localhost:9081, localsrv/ubuntusrv, 5776600, unaryoperator
+getAllTags:{[msg](!)."S=|"0:msg}
+
+/ 2025-04-26D07:34:45.828777200, `:localhost:9081, localsrv/ubuntusrv, 5512700, unaryoperator
+getTag:{[tag;msg](getAllTags[msg])[tag]}
+
+/ 2025-04-26D07:34:49.032458400, `:localhost:9081, localsrv/ubuntusrv, 5427000, 'type
+fixTbl:(uj/) {flip fixTagToName[key d]!value enlist each d:getAllTags x} each s
+
+/ 2025-04-26D07:35:07.030126100, `:localhost:9081, localsrv/ubuntusrv, 6056700, 'type
+fixTbl:(uj) {flip fixTagToName[key d]!value enlist each d:getAllTags x} each s
+

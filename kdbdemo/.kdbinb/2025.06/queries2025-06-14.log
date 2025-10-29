@@ -1,0 +1,83 @@
+/
+File format:
+ <timestamp>, <instance uri>, <instance name>, <roundtrip, nanos>, <result type or error message>
+ <Full query>
+ <line separator>
+\
+/ 2025-06-14D22:16:47.091792400, `:localhost:5010, localsrv/ubuntusrv, 24078100, unaryoperator
+ungroupCol:{[tbl;col]
+  @[tbl where count each tbl col;col;:;raze tbl col]
+ }
+
+/ 2025-06-14D22:16:49.393804, `:localhost:5010, localsrv/ubuntusrv, 17850200, flip
+t
+
+/ 2025-06-14D22:17:05.787178, `:localhost:5010, localsrv/ubuntusrv, 24058300, flip
+ungroupCol[t;`c]
+
+/ 2025-06-14D22:45:09.376871, `:localhost:5010, localsrv/ubuntusrv, 20154700, long[]
+count each t
+
+/ 2025-06-14D22:45:17.315978400, `:localhost:5010, localsrv/ubuntusrv, 13281100, long[]
+where count each t
+
+/ 2025-06-14D22:45:24.332756900, `:localhost:5010, localsrv/ubuntusrv, 10442200, flip
+t where count each t
+
+/ 2025-06-14D22:45:46.321780900, `:localhost:5010, localsrv/ubuntusrv, 13851200, flip
+t where count each t `c
+
+/ 2025-06-14D22:45:59.728299700, `:localhost:5010, localsrv/ubuntusrv, 13162700, long[]
+count each t `c
+
+/ 2025-06-14D22:46:03.849708600, `:localhost:5010, localsrv/ubuntusrv, 11579600, long[]
+where count each t `c
+
+/ 2025-06-14D22:46:09.081351700, `:localhost:5010, localsrv/ubuntusrv, 11439300, flip
+t where count each t `c
+
+/ 2025-06-14D22:46:47.195633600, `:localhost:5010, localsrv/ubuntusrv, 15500600, long[]
+raze t `c
+
+/ 2025-06-14D22:56:30.914214100, `:localhost:5010, localsrv/ubuntusrv, 28087900, 'Cannot write to handle 10. OS reports: Bad file descriptor
+10 {x,-2#x}/[0;1]
+
+/ 2025-06-14D22:56:54.423261900, `:localhost:5010, localsrv/ubuntusrv, 12883100, function
+{x,-2#x}
+
+/ 2025-06-14D22:57:04.573515300, `:localhost:5010, localsrv/ubuntusrv, 10254200, long[]
+{x,-2#x}/[10;0 1]
+
+/ 2025-06-14D22:57:15.533539100, `:localhost:5010, localsrv/ubuntusrv, 6168721300, 'stop
+{x,-2#x}/[0 1]
+
+/ 2025-06-14D22:57:54.763533900, `:localhost:5010, localsrv/ubuntusrv, 280997300, 'null
+{x,-2#x} [0 1]
+
+/ 2025-06-14D22:58:56.608524100, `:localhost:5010, localsrv/ubuntusrv, 12506200, object[]
+10 {x,-2#x}\ 0 1
+
+/ 2025-06-14D22:59:06.684332400, `:localhost:5010, localsrv/ubuntusrv, 9184700, object[]
+10 {x,sum -2#x}\ 0 1
+
+/ 2025-06-14D22:59:17.580997900, `:localhost:5010, localsrv/ubuntusrv, 10085200, long[]
+10 {x,sum -2#x}/ 0 1
+
+/ 2025-06-14D22:59:24.174967800, `:localhost:5010, localsrv/ubuntusrv, 9744218500, 'stop
+10 {x,sum -2#x} over 0 1
+
+/ 2025-06-14D23:00:00.427289700, `:localhost:5010, localsrv/ubuntusrv, 182592900, object[]
+10 {x,sum -2#x}\ 0 1
+
+/ 2025-06-14D23:00:05.055618300, `:localhost:5010, localsrv/ubuntusrv, 8021000, long[]
+10 {x,sum -2#x}/ 0 1
+
+/ 2025-06-14D23:00:14.587734, `:localhost:5010, localsrv/ubuntusrv, 9221600, long[]
+10 {x,sum -2#x}/ 0 1
+
+/ 2025-06-14D23:00:35.547949200, `:localhost:5010, localsrv/ubuntusrv, 11304000, long[]
+prds 1+til 4
+
+/ 2025-06-14D23:00:47.171715100, `:localhost:5010, localsrv/ubuntusrv, 10182700, long
+prd 1+til 4
+

@@ -1,0 +1,39 @@
+itype,otype,conversion
+s,i,{"I"$string x}
+s,h,{"H"$string x}
+s,j,{"J"$string x}
+s,e,{"E"$string x}
+s,f,{"F"$string x}
+s,d,{"D"$string x}
+s,z,{"Z"$string x}
+s,t,{"T"$string x}
+s,c,{string x}
+s,b,{`Y=x}
+c,s,{`$'x}
+s,C,{string x}
+z,d,{`date$x}
+f,j,{`long$x}
+i,j,{`long$x}
+i,C,{string x}
+i,s,{`$string x}
+i,f,{`float$x}
+f,i,{`int$x}
+t,z,{`datetime$x}
+d,z,{`datetime$x}
+C,s,{`$x}
+C,i,{"I"$x}
+C,h,{"H"$x}
+C,j,{"J"$x}
+C,e,{"E"$x}
+C,f,{"F"$x}
+C,d,{"D"$x}
+C,z,{"Z"$x}
+C,t,{"N"$x}
+C,,{}
+f,s,{`$string x}
+j,s,{`$string x}
+j,C,{string x}
+c,i,{"I"$'x}
+c,j,{"J"$'x}
+j,i,{`int$x}
+j,f,{`float$x}

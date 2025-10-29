@@ -1,0 +1,102 @@
+/
+File format:
+ <timestamp>, <instance uri>, <instance name>, <roundtrip, nanos>, <result type or error message>
+ <Full query>
+ <line separator>
+\
+/ 2025-07-27D17:20:02.395203100, `:localhost:5010, localsrv/ubuntusrv, 57608400, '.cfg.services
+.cfg.services
+
+/ 2025-07-27D17:20:27.747538500, `:localhost:5010, localsrv/ubuntusrv, 220580500, ' 
+    `$ sv (.cfg.services[x][`hostname];.cfg.services[x][`port];string[1000]);
+
+/ 2025-07-27D17:20:29.891104800, `:localhost:5010, localsrv/ubuntusrv, 11829100, ' 
+    `$ sv (.cfg.services[x][`hostname];.cfg.services[x][`port];string[1000])
+
+/ 2025-07-27D17:20:42.664739600, `:localhost:5010, localsrv/ubuntusrv, 14725600, unaryoperator
+x:`tp01
+
+/ 2025-07-27D17:20:43.577329400, `:localhost:5010, localsrv/ubuntusrv, 10155200, flip
+.cfg.services
+
+/ 2025-07-27D17:20:47.295197300, `:localhost:5010, localsrv/ubuntusrv, 10841800, ' 
+    `$ sv (.cfg.services[x][`hostname];.cfg.services[x][`port];string[1000])
+
+/ 2025-07-27D17:20:52.300414100, `:localhost:5010, localsrv/ubuntusrv, 9966500, 'type
+(.cfg.services[x][`hostname];.cfg.services[x][`port];string[1000])
+
+/ 2025-07-27D17:21:02.930308200, `:localhost:5010, localsrv/ubuntusrv, 11537600, ' 
+    `$ sv (.cfg.services[x][`hostname];string[.cfg.services[x][`port]];string[1000])
+
+/ 2025-07-27D17:21:09.525573700, `:localhost:5010, localsrv/ubuntusrv, 10363000, 'type
+(.cfg.services[x][`hostname];string[.cfg.services[x][`port]];string[1000])
+
+/ 2025-07-27D17:21:12.978288100, `:localhost:5010, localsrv/ubuntusrv, 9367700, char[]
+string[1000]
+
+/ 2025-07-27D17:21:17.063185800, `:localhost:5010, localsrv/ubuntusrv, 11641800, 'type
+string[.cfg.services[x][`port]]
+
+/ 2025-07-27D17:21:22.456216500, `:localhost:5010, localsrv/ubuntusrv, 9771900, 'type
+.cfg.services[x][`port]
+
+/ 2025-07-27D17:21:31.755554200, `:localhost:5010, localsrv/ubuntusrv, 8724900, int[]
+.cfg.services[x]
+
+/ 2025-07-27D17:21:34.980309300, `:localhost:5010, localsrv/ubuntusrv, 9743100, flip
+.cfg.services
+
+/ 2025-07-27D17:22:44.982910900, `:localhost:5010, localsrv/ubuntusrv, 236496100, flip
+.cfg.services
+
+/ 2025-07-27D17:22:51.526160300, `:localhost:5010, localsrv/ubuntusrv, 8882400, ' 
+    `$ sv (.cfg.services[x][`hostname];string[.cfg.services[x][`port]];string[1000])
+
+/ 2025-07-27D17:22:57.571479100, `:localhost:5010, localsrv/ubuntusrv, 9968100, 'x
+.cfg.services[x][`hostname]
+
+/ 2025-07-27D17:22:59.630780400, `:localhost:5010, localsrv/ubuntusrv, 9202700, unaryoperator
+x:`tp01
+
+/ 2025-07-27D17:23:03.135501500, `:localhost:5010, localsrv/ubuntusrv, 9338000, 'type
+.cfg.services[x][`hostname]
+
+/ 2025-07-27D17:23:07.485067500, `:localhost:5010, localsrv/ubuntusrv, 8698200, string[]
+.cfg.services[x]
+
+/ 2025-07-27D17:23:09.345033800, `:localhost:5010, localsrv/ubuntusrv, 9465800, flip
+.cfg.services
+
+/ 2025-07-27D17:23:10.404577, `:localhost:5010, localsrv/ubuntusrv, 8583400, unaryoperator
+x:`tp01
+
+/ 2025-07-27D17:23:14.648436800, `:localhost:5010, localsrv/ubuntusrv, 9016100, string[]
+.cfg.services[x]
+
+/ 2025-07-27D17:23:17.731753300, `:localhost:5010, localsrv/ubuntusrv, 10407600, flip
+.cfg.services
+
+/ 2025-07-27D17:23:23.994793500, `:localhost:5010, localsrv/ubuntusrv, 9915500, string[]
+.cfg.services[`tp01]
+
+/ 2025-07-27D17:23:52.572362400, `:localhost:5010, localsrv/ubuntusrv, 169262300, dict
+.cfg.services[`tp01]
+
+/ 2025-07-27D17:23:54.368571900, `:localhost:5010, localsrv/ubuntusrv, 10192500, unaryoperator
+x:`tp01
+
+/ 2025-07-27D17:23:59.780150700, `:localhost:5010, localsrv/ubuntusrv, 10419000, object[]
+(.cfg.services[x][`hostname];string[.cfg.services[x][`port]];string[1000])
+
+/ 2025-07-27D17:24:14.857797100, `:localhost:5010, localsrv/ubuntusrv, 10370000, ' 
+    `$ sv (string[.cfg.services[x][`hostname]];string[.cfg.services[x][`port]];string[1000])
+
+/ 2025-07-27D17:24:20.316374300, `:localhost:5010, localsrv/ubuntusrv, 9636900, object[]
+(string[.cfg.services[x][`hostname]];string[.cfg.services[x][`port]];string[1000])
+
+/ 2025-07-27D17:24:32.195053300, `:localhost:5010, localsrv/ubuntusrv, 9642300, char[]
+    ":" sv (string[.cfg.services[x][`hostname]];string[.cfg.services[x][`port]];string[1000])
+
+/ 2025-07-27D17:24:40.173001900, `:localhost:5010, localsrv/ubuntusrv, 9068900, string
+    `$":" sv (string[.cfg.services[x][`hostname]];string[.cfg.services[x][`port]];string[1000])
+

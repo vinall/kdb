@@ -1,0 +1,398 @@
+/
+File format:
+ <timestamp>, <instance uri>, <instance name>, <roundtrip, nanos>, <result type or error message>
+ <Full query>
+ <line separator>
+\
+/ 2025-02-06D14:58:02.669838300, `:localhost:9003, `:localhost:9003, 427215000, object[]
+{
+    / fix for root namespace
+    v:$[x=y; x; ` sv x,y];
+    / list of all inner namespaces - we get all keys that has ` as the first key and it's value is (::) - that's namespace
+    ns:l where {$[`~first key x; (::)~x[`]; 0b]} each ` sv'v,'l:key[v] except `;
+    / get all functions, tables, variables in current namespace
+    r:(system') ("fav",\:" "),\:string v;
+    / Functions
+    fns:{v:$[x=`; y; ` sv x,y]; t:type value v; a:$[112h=t; enlist `; 4h=type first s:2 value/v; s 1; $[t in 101 103h; enlist `x; t in 102 106 107 108 109 110 111h; `x`y; enlist `]]; (y;t;a)}[v;] each r[0];
+    / return the table details in format (name;size;meta;keys)
+    tbs:{v:$[x=`; y; ` sv x,y]; (y;count value v;0!meta v;keys v)}[v;] each r[1];
+    / variables are anything except namespaces and tables. We get (name;type;description) for each
+    /   for dictionary - (size;keys type; values type)
+    / Description depends on the type and is:
+    vrs:{v:$[x=`; get y; x[y]]; t:type v; (y;t;$[99h=t; (count v;type key v;type value v); ()])}[v;] each r[2] except ns,r[1];
+    / return final result; (namespace;function;tables;variables;list of inner namespaces or an error)
+    (y;fns;tbs;vrs;.z.s[v;] each ns)
+ }[`; `]
+
+/ 2025-02-06D14:58:25.016343300, `:localhost:9003, `:localhost:9003, 19415800, long
+1+1
+
+/ 2025-02-06D14:58:36.973781900, `:localhost:9003, `:localhost:9003, 10998400, long
+1+1
+
+/ 2025-02-06D14:59:33.041187900, `:localhost:9003, `:localhost:9003, 13113200, unaryoperator
+t:([] time:`timestamp$();symbol:`$();lastprice:`float$();lastqty:`long$());
+
+/ 2025-02-06D15:00:01.990873900, `:localhost:9003, `:localhost:9003, 13769500, long[]
+`t insert (.z.P;`appl;100.1;100)
+
+/ 2025-02-06D15:00:37.900494400, `:localhost:9003, `:localhost:9003, 10698700, long[]
+`t insert (.z.P;`msft;80.1;100)
+
+/ 2025-02-06D15:00:38.651926, `:localhost:9003, `:localhost:9003, 10154500, long[]
+`t insert (.z.P;`csco;90.1;100)
+
+/ 2025-02-06D15:00:39.352938700, `:localhost:9003, `:localhost:9003, 10332500, long[]
+`t insert (.z.P;`nav;150.1;100)
+
+/ 2025-02-06D15:00:42.523695100, `:localhost:9003, `:localhost:9003, 10244100, flip
+t
+
+/ 2025-02-06D15:01:12.445141900, `:localhost:9003, `:localhost:9003, 8302600, unaryoperator
+func:{x,sum -2#x}
+
+/ 2025-02-06D15:01:40.792698300, `:localhost:9003, `:localhost:9003, 16032900, object[]
+func\[10;0 1]
+
+/ 2025-02-06D15:01:45.707545900, `:localhost:9003, `:localhost:9003, 11087000, long[]
+func/[10;0 1]
+
+/ 2025-02-06D15:02:18.149583600, `:localhost:9003, `:localhost:9003, 10334800, flip
+select iasc lastprice from t
+
+/ 2025-02-06D15:02:45.995230700, `:localhost:9003, `:localhost:9003, 8836000, 'rank
+select lastprice(iasc lastprice)[1] from t
+
+/ 2025-02-06D15:03:18.144100900, `:localhost:9003, `:localhost:9003, 10287900, long
+exec (iasc lastprice)[1] from t
+
+/ 2025-02-06D15:03:28.501621200, `:localhost:9003, `:localhost:9003, 11435100, double
+exec lastprice (iasc lastprice)[1] from t
+
+/ 2025-02-06D15:03:34.542861, `:localhost:9003, `:localhost:9003, 8918300, 'rank
+select lastprice (iasc lastprice)[1] from t
+
+/ 2025-02-06D15:03:37.558912400, `:localhost:9003, `:localhost:9003, 9068000, double
+exec lastprice (iasc lastprice)[1] from t
+
+/ 2025-02-06D15:03:46.138798800, `:localhost:9003, `:localhost:9003, 10578400, ''
+select lastprice'(iasc lastprice)[1] from t
+
+/ 2025-02-06D15:03:50.979025, `:localhost:9003, `:localhost:9003, 9334700, 'rank
+select lastprice each (iasc lastprice)[1] from t
+
+/ 2025-02-06D15:04:14.790702400, `:localhost:9003, `:localhost:9003, 9753700, 'rank
+select {x[y]}[lastprice;](iasc lastprice)[1] from t
+
+/ 2025-02-06D15:04:30.389268200, `:localhost:9003, `:localhost:9003, 12759700, 'rank
+select {x[y]}[lastprice;] each (iasc lastprice)[1] from t
+
+/ 2025-02-06D16:39:51.885460800, `:localhost:9003, `:localhost:9003, 53252200, 'rank
+select {x[y]}[lastprice;] each (iasc lastprice)[1] from t
+
+/ 2025-02-06D18:34:16.618664, `:localhost:9003, `:localhost:9003, 38043000, dict
+select lastprice by symbol from t
+
+/ 2025-02-06D18:34:24.452321300, `:localhost:9003, `:localhost:9003, 5758300, dict
+select iasc lastprice by symbol from t
+
+/ 2025-02-06D18:34:57.777807600, `:localhost:9003, `:localhost:9003, 6777100, string
+delete from `t
+
+/ 2025-02-06D18:35:56.382112300, `:localhost:9003, `:localhost:9003, 7233400, long[]
+1000?8
+
+/ 2025-02-06D18:36:10.177233800, `:localhost:9003, `:localhost:9003, 4866900, long[]
+60*60*1000*1000?8
+
+/ 2025-02-06D18:36:52.259356100, `:localhost:9003, `:localhost:9003, 4911900, long[]
+1000?8
+
+/ 2025-02-06D18:36:58.785190, `:localhost:9003, `:localhost:9003, 4425000, long[]
+1+1000?8
+
+/ 2025-02-06D18:37:12.540871100, `:localhost:9003, `:localhost:9003, 14589400, long[]
+asc 1+1000?8
+
+/ 2025-02-06D18:37:26.530018200, `:localhost:9003, `:localhost:9003, 6113700, long[]
+60*60*1000*asc 1+1000?8
+
+/ 2025-02-06D18:37:35.352883200, `:localhost:9003, `:localhost:9003, 5404700, time[]
+`time$60*60*1000*asc 1+1000?8
+
+/ 2025-02-06D18:37:49.200942700, `:localhost:9003, `:localhost:9003, 6570100, time[]
+`time$60*60*1000*asc 1+1000?8.9
+
+/ 2025-02-06D18:38:07.319781700, `:localhost:9003, `:localhost:9003, 5813300, time[]
+`time$60*60*1000*asc 1+1000?3.45
+
+/ 2025-02-06D18:38:17.485352, `:localhost:9003, `:localhost:9003, 5629600, time[]
+`time$60*60*1000*asc 1+1000?2.45
+
+/ 2025-02-06D18:38:37.551282400, `:localhost:9003, `:localhost:9003, 4726400, double[]
+1000?2.45
+
+/ 2025-02-06D18:38:53.400899100, `:localhost:9003, `:localhost:9003, 6328300, double[]
+1+1000?2.45
+
+/ 2025-02-06D18:38:57.211311400, `:localhost:9003, `:localhost:9003, 5888900, time[]
+`time$60*60*1000*asc 1+1000?2.45
+
+/ 2025-02-06D18:39:18.186079300, `:localhost:9003, `:localhost:9003, 5400400, double[]
+asc 1+1000?2.45
+
+/ 2025-02-06D18:39:39.915102700, `:localhost:9003, `:localhost:9003, 13142000, time[]
+`time$60*60*1000*asc 8+1000?2.45
+
+/ 2025-02-06D18:40:15.139444400, `:localhost:9003, `:localhost:9003, 5903400, double[]
+1000?15.45
+
+/ 2025-02-06D18:40:34.813351900, `:localhost:9003, `:localhost:9003, 5725000, time[]
+`time$60*60*1000*asc 8+1000?8
+
+/ 2025-02-06D18:40:47.914758600, `:localhost:9003, `:localhost:9003, 5119600, time[]
+`time$60*60*1000*asc 8+1000?8.5
+
+/ 2025-02-06D18:41:01.263272300, `:localhost:9003, `:localhost:9003, 5720500, time[]
+`time$60*60*1000*asc 8+1000?7.5
+
+/ 2025-02-06D18:41:16.196744, `:localhost:9003, `:localhost:9003, 5709100, double
+15.15 - 9.15
+
+/ 2025-02-06D18:41:31.125344300, `:localhost:9003, `:localhost:9003, 4967700, time[]
+`time$60*60*1000*asc 8+1000?6.0
+
+/ 2025-02-06D18:41:56.192698100, `:localhost:9003, `:localhost:9003, 5934100, time[]
+`time$60*60*1000*asc 9.15+1000?6.0
+
+/ 2025-02-06D18:44:38.029679100, `:localhost:9003, `:localhost:9003, 7442400, object[]
+(time:`time$60*60*1000*asc 9.15+1000?6.0;symbol:1000?`aapl`csco`msft`spy;lastpx:1000?100.1;lastqty:1000?500)
+
+/ 2025-02-06D18:44:42.243646500, `:localhost:9003, `:localhost:9003, 6179300, flip
+([] time:`time$60*60*1000*asc 9.15+1000?6.0;symbol:1000?`aapl`csco`msft`spy;lastpx:1000?100.1;lastqty:1000?500)
+
+/ 2025-02-06D18:44:45.362118900, `:localhost:9003, `:localhost:9003, 4871200, unaryoperator
+t:([] time:`time$60*60*1000*asc 9.15+1000?6.0;symbol:1000?`aapl`csco`msft`spy;lastpx:1000?100.1;lastqty:1000?500)
+
+/ 2025-02-06D18:44:49.439589700, `:localhost:9003, `:localhost:9003, 5062900, flip
+t
+
+/ 2025-02-06D18:44:54.714863800, `:localhost:9003, `:localhost:9003, 5892300, flip
+t
+
+/ 2025-02-06D18:44:55.840404600, `:localhost:9003, `:localhost:9003, 5399700, unaryoperator
+t:([] time:`time$60*60*1000*asc 9.15+1000?6.0;symbol:1000?`aapl`csco`msft`spy;lastpx:1000?100.1;lastqty:1000?500)
+
+/ 2025-02-06D18:45:39.550346900, `:localhost:9003, `:localhost:9003, 12912400, 'lastprice
+select iasc lastprice by symbol from t
+
+/ 2025-02-06D18:45:44.293543900, `:localhost:9003, `:localhost:9003, 11934900, dict
+select iasc lastpx by symbol from t
+
+/ 2025-02-06D18:46:12.297132200, `:localhost:9003, `:localhost:9003, 4720200, dict
+select lastpx[(iasc lastpx)[1]] by symbol from t
+
+/ 2025-02-06D18:46:19.186007600, `:localhost:9003, `:localhost:9003, 5326900, dict
+select lastpx[(idesc lastpx)[1]] by symbol from t
+
+/ 2025-02-06D18:46:31.995771500, `:localhost:9003, `:localhost:9003, 12178000, long[]
+func/[10;0 1]
+
+/ 2025-02-06D18:54:01.548725300, `:localhost:9003, `:localhost:9003, 5712000, dict
+select lastpx[(idesc lastpx)[1]] by symbol from t
+
+/ 2025-02-06D18:54:21.346809100, `:localhost:9003, `:localhost:9003, 4622800, 'type
+select lastpx[1 idesc lastpx] from t
+
+/ 2025-02-06D18:54:30.876077400, `:localhost:9003, `:localhost:9003, 4664600, 'rank
+select lastpx[(idesc lastpx)1] from t
+
+/ 2025-02-06D18:54:35.340292500, `:localhost:9003, `:localhost:9003, 5705600, 'rank
+select lastpx[(idesc lastpx)[1]] from t
+
+/ 2025-02-06D18:54:42.936202100, `:localhost:9003, `:localhost:9003, 4821100, double
+exec lastpx[(idesc lastpx)[1]] from t
+
+/ 2025-02-06D18:55:04.386327100, `:localhost:9003, `:localhost:9003, 5319100, dict
+select lastpx[(idesc lastpx)[1]] by symbol from t
+
+/ 2025-02-06D18:55:07.607693300, `:localhost:9003, `:localhost:9003, 4875200, long[]
+func/[10;0 1]
+
+/ 2025-02-06D18:58:11.124989900, `:localhost:9003, `:localhost:9003, 8020100, unaryoperator
+h:hopen `:/tmp/test.csv
+
+/ 2025-02-06D18:58:55.558803200, `:localhost:9003, `:localhost:9003, 16259400, string
+`:/tmp/test.csv 0: csv 0: t
+
+/ 2025-02-06D18:59:25.095816300, `:localhost:9003, `:localhost:9003, 5385600, string[]
+cols t
+
+/ 2025-02-06D18:59:41.121876500, `:localhost:9003, `:localhost:9003, 5681400, 'type
+("PSFI";",") `:/tmp/test.csv
+
+/ 2025-02-06D18:59:45.617074500, `:localhost:9003, `:localhost:9003, 13660600, object[]
+("PSFI";",") 0: `:/tmp/test.csv
+
+/ 2025-02-06D18:59:51.693712400, `:localhost:9003, `:localhost:9003, 15745100, object[]
+flip ("PSFI";",") 0: `:/tmp/test.csv
+
+/ 2025-02-06D18:59:57.893885500, `:localhost:9003, `:localhost:9003, 5747700, flip
+ ("PSFI";enlist ",") 0: `:/tmp/test.csv
+
+/ 2025-02-06D19:00:14.314394200, `:localhost:9003, `:localhost:9003, 16223600, string
+`:/tmp/test.csv 0: csv 0: 0_t
+
+/ 2025-02-06D19:00:18.477495100, `:localhost:9003, `:localhost:9003, 6229700, object[]
+("PSFI";",") 0: `:/tmp/test.csv
+
+/ 2025-02-06D19:00:29.342875600, `:localhost:9003, `:localhost:9003, 6384400, flip
+ 0_t
+
+/ 2025-02-06D19:00:33.610086500, `:localhost:9003, `:localhost:9003, 5198900, flip
+0_t
+
+/ 2025-02-06D19:00:59.852371700, `:localhost:9003, `:localhost:9003, 16114000, string
+`:/tmp/test.csv 0: csv 0: t
+
+/ 2025-02-06D19:01:00.832725500, `:localhost:9003, `:localhost:9003, 5338600, object[]
+("PSFI";",") 0: `:/tmp/test.csv
+
+/ 2025-02-06D19:01:54.069571600, `:localhost:9003, `:localhost:9003, 7211400, unaryoperator
+h:hopen `:/tmp/test.csv
+
+/ 2025-02-06D19:01:55.511775400, `:localhost:9003, `:localhost:9003, 8713500, string
+`:/tmp/test.csv 0: csv 0: t
+
+/ 2025-02-06D19:02:15.069443600, `:localhost:9003, `:localhost:9003, 5654900, object[]
+("PSFI";",") 0: `:/tmp/test.csv
+
+/ 2025-02-06D19:02:43.935645, `:localhost:9003, `:localhost:9003, 6368400, 'rank
+(`time`symbol`lastpx`lastqty!).("PSFI";",") 0: `:/tmp/test.csv
+
+/ 2025-02-06D19:02:50.917939600, `:localhost:9003, `:localhost:9003, 6326700, 'type
+(!).("PSFI";",") 0: `:/tmp/test.csv
+
+/ 2025-02-06D19:02:54.076318700, `:localhost:9003, `:localhost:9003, 6941600, object[]
+("PSFI";",") 0: `:/tmp/test.csv
+
+/ 2025-02-06D19:02:56.501788900, `:localhost:9003, `:localhost:9003, 6309400, dict
+`time`symbol`lastpx`lastqty!("PSFI";",") 0: `:/tmp/test.csv
+
+/ 2025-02-06D19:02:59.774486500, `:localhost:9003, `:localhost:9003, 6104100, flip
+flip `time`symbol`lastpx`lastqty!("PSFI";",") 0: `:/tmp/test.csv
+
+/ 2025-02-06D19:03:47.494477400, `:localhost:9003, `:localhost:9003, 5057300, '"
+8=FIX.4.4|9=178|35=8|49=A|56=B|1=accountA|6=229.6295|11=00000001|12=|13=|14=10000|15=GBp|17=100000005|19=|21=1|29=1|30=XLON|31=229.1|32=1850|37=|38=10000|39=2|41=|44=|48=VOD.L|50=AB|52=20131218-09:01:46|54=1|55=VOD|58=|59=1|60=20131218-09:01:46|10=197"
+
+/ 2025-02-06D19:04:02.016043600, `:localhost:9003, `:localhost:9003, 5188000, char[]
+"S=|" "8=FIX.4.4|9=178|35=8|49=A|56=B|1=accountA|6=229.6295|11=00000001|12=|13=|14=10000|15=GBp|17=100000005|19=|21=1|29=1|30=XLON|31=229.1|32=1850|37=|38=10000|39=2|41=|44=|48=VOD.L|50=AB|52=20131218-09:01:46|54=1|55=VOD|58=|59=1|60=20131218-09:01:46|10=197"
+
+/ 2025-02-06D19:04:05.408340, `:localhost:9003, `:localhost:9003, 4629900, char[]
+"S=|" s:"8=FIX.4.4|9=178|35=8|49=A|56=B|1=accountA|6=229.6295|11=00000001|12=|13=|14=10000|15=GBp|17=100000005|19=|21=1|29=1|30=XLON|31=229.1|32=1850|37=|38=10000|39=2|41=|44=|48=VOD.L|50=AB|52=20131218-09:01:46|54=1|55=VOD|58=|59=1|60=20131218-09:01:46|10=197"
+
+/ 2025-02-06D19:04:11.888762100, `:localhost:9003, `:localhost:9003, 6177000, unaryoperator
+s:"8=FIX.4.4|9=178|35=8|49=A|56=B|1=accountA|6=229.6295|11=00000001|12=|13=|14=10000|15=GBp|17=100000005|19=|21=1|29=1|30=XLON|31=229.1|32=1850|37=|38=10000|39=2|41=|44=|48=VOD.L|50=AB|52=20131218-09:01:46|54=1|55=VOD|58=|59=1|60=20131218-09:01:46|10=197"
+
+/ 2025-02-06D19:04:16.402664600, `:localhost:9003, `:localhost:9003, 5472500, char[]
+"S=|" s
+
+/ 2025-02-06D19:04:25.973836300, `:localhost:9003, `:localhost:9003, 11276000, unaryoperator
+s::"8=FIX.4.4|9=178|35=8|49=A|56=B|1=accountA|6=229.6295|11=00000001|12=|13=|14=10000|15=GBp|17=100000005|19=|21=1|29=1|30=XLON|31=229.1|32=1850|37=|38=10000|39=2|41=|44=|48=VOD.L|50=AB|52=20131218-09:01:46|54=1|55=VOD|58=|59=1|60=20131218-09:01:46|10=197"
+
+/ 2025-02-06D19:04:28.165385400, `:localhost:9003, `:localhost:9003, 4806500, char[]
+s
+
+/ 2025-02-06D19:04:31.770625900, `:localhost:9003, `:localhost:9003, 4453500, unaryoperator
+s:"8=FIX.4.4|9=178|35=8|49=A|56=B|1=accountA|6=229.6295|11=00000001|12=|13=|14=10000|15=GBp|17=100000005|19=|21=1|29=1|30=XLON|31=229.1|32=1850|37=|38=10000|39=2|41=|44=|48=VOD.L|50=AB|52=20131218-09:01:46|54=1|55=VOD|58=|59=1|60=20131218-09:01:46|10=197"
+
+/ 2025-02-06D19:04:32.456032800, `:localhost:9003, `:localhost:9003, 6239900, char[]
+s
+
+/ 2025-02-06D19:04:35.505016600, `:localhost:9003, `:localhost:9003, 6086800, char[]
+"S=|" s 
+
+/ 2025-02-06D19:04:45.417020700, `:localhost:9003, `:localhost:9003, 6121200, 'rank
+(!)."S=|" s 
+
+/ 2025-02-06D19:04:53.265866200, `:localhost:9003, `:localhost:9003, 5393500, dict
+(!)."S=|" 0: s 
+
+/ 2025-02-06D19:05:02.913513200, `:localhost:9003, `:localhost:9003, 6159100, 'length
+flip (!)."S=|" 0: s 
+
+/ 2025-02-06D19:05:06.055538100, `:localhost:9003, `:localhost:9003, 11171600, flip
+enlist (!)."S=|" 0: s 
+
+/ 2025-02-06D19:05:31.472309700, `:localhost:9003, `:localhost:9003, 5261300, unaryoperator
+fix:"8=FIX.4.4^9=178^35=8"
+
+/ 2025-02-06D19:05:38.763797900, `:localhost:9003, `:localhost:9003, 5182600, flip
+enlist (!)."S=|" 0: fix
+
+/ 2025-02-06D19:05:43.354273600, `:localhost:9003, `:localhost:9003, 5483500, flip
+enlist (!)."S=^" 0: fix
+
+/ 2025-02-06D19:14:39.217787200, `:localhost:9003, `:localhost:9003, 22340500, unaryoperator
+L:10 20 30 40 50
+
+/ 2025-02-06D19:14:50.391358, `:localhost:9003, `:localhost:9003, 6862100, long
+@[L; 1]
+
+/ 2025-02-06D19:14:56.654164200, `:localhost:9003, `:localhost:9003, 6859700, long
+L@1
+
+/ 2025-02-06D19:15:08.318927900, `:localhost:9003, `:localhost:9003, 6176100, unaryoperator
+m:(10 20 30; 100 200 300)
+
+/ 2025-02-06D19:15:15.544504500, `:localhost:9003, `:localhost:9003, 6144300, long
+m . 0 2
+
+/ 2025-02-06D19:24:16.813302700, `:localhost:9003, `:localhost:9003, 11011000, long[]
+@[L; 1; neg]
+
+/ 2025-02-06D19:24:20.233092500, `:localhost:9003, `:localhost:9003, 5734100, long[]
+L
+
+/ 2025-02-06D19:24:21.785028600, `:localhost:9003, `:localhost:9003, 5127600, string
+@[`L; 1; neg]
+
+/ 2025-02-06D19:24:23.002671800, `:localhost:9003, `:localhost:9003, 5394200, long[]
+L
+
+/ 2025-02-06D19:25:08.112303200, `:localhost:9003, `:localhost:9003, 5392700, 'l
+@[l:L; where l<20; :;20]
+
+/ 2025-02-06D19:25:16.985925500, `:localhost:9003, `:localhost:9003, 6585700, 'l
+@[L; where l<20; :;20]
+
+/ 2025-02-06D19:25:17.792325800, `:localhost:9003, `:localhost:9003, 5369100, long[]
+L
+
+/ 2025-02-06D19:25:20.202425, `:localhost:9003, `:localhost:9003, 4916400, 'l
+@[`L; where l<20; :;20]
+
+/ 2025-02-06D19:25:21.002569200, `:localhost:9003, `:localhost:9003, 4816800, long[]
+L
+
+/ 2025-02-06D19:25:28.205318500, `:localhost:9003, `:localhost:9003, 6343000, string
+@[`L; where L<20; :;20]
+
+/ 2025-02-06D19:25:29.512188400, `:localhost:9003, `:localhost:9003, 4892500, long[]
+L
+
+/ 2025-02-06D19:26:08.572047800, `:localhost:9003, `:localhost:9003, 5108800, string
+@[`L; 0; :;-2]
+
+/ 2025-02-06D19:26:09.731736300, `:localhost:9003, `:localhost:9003, 4390800, long[]
+L
+
+/ 2025-02-06D19:26:21.911726300, `:localhost:9003, `:localhost:9003, 4966200, string
+@[`L; where L<0; :;-2]
+
+/ 2025-02-06D19:26:27.155854900, `:localhost:9003, `:localhost:9003, 4648100, string
+@[`L; where L<0; :;10]
+
+/ 2025-02-06D19:26:27.981552100, `:localhost:9003, `:localhost:9003, 4186200, long[]
+L
+

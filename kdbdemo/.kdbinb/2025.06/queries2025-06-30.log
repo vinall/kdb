@@ -1,0 +1,36 @@
+/
+File format:
+ <timestamp>, <instance uri>, <instance name>, <roundtrip, nanos>, <result type or error message>
+ <Full query>
+ <line separator>
+\
+/ 2025-06-30D12:29:26.022743700, `:localhost:5010, localsrv/ubuntusrv, 73070800, long[]
+1+til 5
+
+/ 2025-06-30D12:29:28.422797800, `:localhost:5010, localsrv/ubuntusrv, 14036200, long[]
+sums 1+til 5
+
+/ 2025-06-30D12:29:35.807844600, `:localhost:5010, localsrv/ubuntusrv, 14313100, long[]
+sums 1+til 5
+
+/ 2025-06-30D12:29:48.072517, `:localhost:5010, localsrv/ubuntusrv, 14546700, '+
+(+1) prior 1+til 5
+
+/ 2025-06-30D12:29:49.943247600, `:localhost:5010, localsrv/ubuntusrv, 13254100, long[]
+(+) prior 1+til 5
+
+/ 2025-06-30D12:29:59.270893900, `:localhost:5010, localsrv/ubuntusrv, 13276900, long
+sum 1+til 5
+
+/ 2025-06-30D12:30:01.725359400, `:localhost:5010, localsrv/ubuntusrv, 12865100, long[]
+(+) prior 1+til 5
+
+/ 2025-06-30D12:30:04.571793200, `:localhost:5010, localsrv/ubuntusrv, 12440000, long[]
+1+til 5
+
+/ 2025-06-30D12:30:12.637899900, `:localhost:5010, localsrv/ubuntusrv, 11929300, long[]
+1+til 5
+
+/ 2025-06-30D12:30:29.285725400, `:localhost:5010, localsrv/ubuntusrv, 14251700, long[]
+(+) prior 1+til 5
+

@@ -1,0 +1,14 @@
+{
+  "prod": {
+    "metadata.broker.list": "brokers",
+    "group.id": "GROUP_NAME",
+    "security.protocol": "SSL",
+    "ssl.ca.location": "prod_ca_cert.pem",
+    "ssl.certificate.location": "cert.pem",
+    "ssl.key.location": "key.pem",
+    "ssl.key.password": "keystore"
+  },
+  "uat": {
+
+  }
+}

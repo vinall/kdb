@@ -1,0 +1,12 @@
+/
+File format:
+ <timestamp>, <instance uri>, <instance name>, <roundtrip, nanos>, <result type or error message>
+ <Full query>
+ <line separator>
+\
+/ 2025-06-27D09:03:46.013489500, `:localhost:5010, localsrv/ubuntusrv, 19170100, '(
+([] sym:`AAPL`MSFT`CSCO; some1:((`aa;11);(`bb;12);(`cc;13));some2:((`dd;14);(`ee;15))
+
+/ 2025-06-27D09:03:47.753600600, `:localhost:5010, localsrv/ubuntusrv, 17021400, 'length
+([] sym:`AAPL`MSFT`CSCO; some1:((`aa;11);(`bb;12);(`cc;13));some2:((`dd;14);(`ee;15)))
+

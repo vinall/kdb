@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="KdbScopeHolder">
+    <scope name="localsrv" type="LOCAL">
+      <instance name="ubuntusrv" host="localhost" port="5010" />
+      <instance name="ubuntusrv1" host="localhost" port="5011" />
+    </scope>
+  </component>
+</project>

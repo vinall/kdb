@@ -1,0 +1,90 @@
+/
+File format:
+ <timestamp>, <instance uri>, <instance name>, <roundtrip, nanos>, <result type or error message>
+ <Full query>
+ <line separator>
+\
+/ 2025-05-15D07:37:49.095799, `:localhost:5010, localsrv/ubuntusrv, 19912700, unaryoperator
+L:2 1 3 4 2 1 2
+
+/ 2025-05-15D07:38:00.337337100, `:localhost:5010, localsrv/ubuntusrv, 12614400, long[]
+iasc L
+
+/ 2025-05-15D07:38:06.983439200, `:localhost:5010, localsrv/ubuntusrv, 11859500, long[]
+where 2=iasc L
+
+/ 2025-05-15D07:38:10.776677800, `:localhost:5010, localsrv/ubuntusrv, 11757500, long[]
+L where 2=iasc L
+
+/ 2025-05-15D07:38:20.469292100, `:localhost:5010, localsrv/ubuntusrv, 12096700, boolean[]
+2=iasc L
+
+/ 2025-05-15D07:38:27.056495500, `:localhost:5010, localsrv/ubuntusrv, 12085300, long[]
+iasc L
+
+/ 2025-05-15D07:38:33.631134900, `:localhost:5010, localsrv/ubuntusrv, 11822700, 'type
+L where 2 in iasc L
+
+/ 2025-05-15D07:38:41.793047600, `:localhost:5010, localsrv/ubuntusrv, 11868100, long[]
+iasc L
+
+/ 2025-05-15D07:38:47.570166300, `:localhost:5010, localsrv/ubuntusrv, 12212900, 'type
+L where 2 in iasc L
+
+/ 2025-05-15D07:38:50.451405, `:localhost:5010, localsrv/ubuntusrv, 10767600, long[]
+L where 2 = iasc L
+
+/ 2025-05-15D07:38:51.307010700, `:localhost:5010, localsrv/ubuntusrv, 11811800, unaryoperator
+L:2 1 3 4 2 1 2
+
+/ 2025-05-15D07:38:52.705824700, `:localhost:5010, localsrv/ubuntusrv, 11468800, long[]
+L where 2 = iasc L
+
+/ 2025-05-15D07:38:54.978691700, `:localhost:5010, localsrv/ubuntusrv, 11047900, long[]
+L
+
+/ 2025-05-15D07:39:03.370853200, `:localhost:5010, localsrv/ubuntusrv, 11010600, long
+L[2]
+
+/ 2025-05-15D07:39:12.441928400, `:localhost:5010, localsrv/ubuntusrv, 11519800, long[]
+asc L
+
+/ 2025-05-15D08:03:47.620634300, `:localhost:5010, localsrv/ubuntusrv, 12429100, unaryoperator
+a:til 1000
+
+/ 2025-05-15D08:03:50.412172800, `:localhost:5010, localsrv/ubuntusrv, 10396600, unaryoperator
+b:a
+
+/ 2025-05-15D08:03:57.724011200, `:localhost:5010, localsrv/ubuntusrv, 10863300, unaryoperator
+a,:-1
+
+/ 2025-05-15D08:04:02.678601900, `:localhost:5010, localsrv/ubuntusrv, 10736200, long
+last b
+
+/ 2025-05-15D08:04:17.871730400, `:localhost:5010, localsrv/ubuntusrv, 11136400, function
+.Q.view 
+
+/ 2025-05-15D08:04:20.037949, `:localhost:5010, localsrv/ubuntusrv, 10370800, 'PD
+.Q.view[]
+
+/ 2025-05-15D08:04:23.325429100, `:localhost:5010, localsrv/ubuntusrv, 10964000, '.Q.views
+.Q.views
+
+/ 2025-05-15D08:06:21.295575700, `:localhost:5010, localsrv/ubuntusrv, 11151200, char[]
+.Q.A
+
+/ 2025-05-15D08:06:24.600885700, `:localhost:5010, localsrv/ubuntusrv, 10574900, char[]
+.Q.an
+
+/ 2025-05-15D08:06:40.667946400, `:localhost:5010, localsrv/ubuntusrv, 11757800, 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_0123456789
+10?`$.Q.an
+
+/ 2025-05-15D08:06:50.173459400, `:localhost:5010, localsrv/ubuntusrv, 10796100, 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_0123456789
+10?`$(.Q.an)
+
+/ 2025-05-15D08:06:53.833609800, `:localhost:5010, localsrv/ubuntusrv, 10664100, string[]
+10?`3
+
+/ 2025-05-15D08:06:59.317482300, `:localhost:5010, localsrv/ubuntusrv, 10445400, string
+`$(.Q.an)
+

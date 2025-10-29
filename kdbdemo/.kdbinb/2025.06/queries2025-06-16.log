@@ -1,0 +1,30 @@
+/
+File format:
+ <timestamp>, <instance uri>, <instance name>, <roundtrip, nanos>, <result type or error message>
+ <Full query>
+ <line separator>
+\
+/ 2025-06-16D17:47:48.657058400, `:localhost:5010, localsrv/ubuntusrv, 337166800, object[]
+\pwd
+
+/ 2025-06-16D17:47:55.309375900, `:localhost:5010, localsrv/ubuntusrv, 22645400, object[]
+key `:pwd
+
+/ 2025-06-16D17:47:57.365588800, `:localhost:5010, localsrv/ubuntusrv, 17360700, 'pwd/. OS reports: No such file or directory
+keys `:pwd
+
+/ 2025-06-16D17:47:59.443049600, `:localhost:5010, localsrv/ubuntusrv, 17488100, object[]
+key `:pwd
+
+/ 2025-06-16D17:48:03.714106200, `:localhost:5010, localsrv/ubuntusrv, 26297100, object[]
+\pwd
+
+/ 2025-06-16D17:48:18.265521, `:localhost:5010, localsrv/ubuntusrv, 255110600, 'null
+key `:.
+
+/ 2025-06-16D17:48:26.723926, `:localhost:5010, localsrv/ubuntusrv, 15348500, string[]
+key `:.
+
+/ 2025-06-16D17:48:42.698143200, `:localhost:5010, localsrv/ubuntusrv, 13350500, string[]
+key `:/home/vinay/newkdb/
+

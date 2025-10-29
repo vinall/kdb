@@ -1,0 +1,564 @@
+/
+File format:
+ <timestamp>, <instance uri>, <instance name>, <roundtrip, nanos>, <result type or error message>
+ <Full query>
+ <line separator>
+\
+/ 2025-02-10D17:24:29.417765200, `:localhost:5010, localhost:5010, 11748000, unaryoperator
+show "hello world"
+
+/ 2025-02-10D17:24:37.030343300, `:localhost:5010, localhost:5010, 7288700, unaryoperator
+show "hello world"
+
+/ 2025-02-10D17:24:43.996698900, `:localhost:5010, localhost:5010, 7722800, unaryoperator
+show "hello world";
+
+/ 2025-02-10D17:24:56.867601600, `:localhost:5010, localhost:5010, 104324900, 'null
+show "hello world";
+
+/ 2025-02-10D17:25:48.073109, `:localhost:5010, localhost:5010, 7076400, unaryoperator
+show "hello world";
+
+/ 2025-02-10D17:35:56.753798, `:localhost:5010, `:localhost:5010, 8629900, unaryoperator
+show "hello world";
+
+/ 2025-02-10D17:38:30.378500500, `:localhost:5010, `:localhost:5010, 217093300, unaryoperator
+show "hello world";
+
+/ 2025-02-10D17:38:44.253061700, `:localhost:5010, `:localhost:5010, 13242900, unaryoperator
+show "hello world"
+
+/ 2025-02-10D17:39:12.053741, `:localhost:5010, `:localhost:5010, 12024100, unaryoperator
+show "hello world"
+
+/ 2025-02-10D17:39:13.050256400, `:localhost:5010, `:localhost:5010, 10312300, unaryoperator
+show "hello world"
+
+/ 2025-02-10D17:39:13.658454700, `:localhost:5010, `:localhost:5010, 10475500, unaryoperator
+show "hello world"
+
+/ 2025-02-10D17:39:13.913970300, `:localhost:5010, `:localhost:5010, 11008200, unaryoperator
+show "hello world"
+
+/ 2025-02-10D17:39:37.841781500, `:localhost:5010, `:localhost:5010, 165285400, 'null
+show "hello world"
+
+/ 2025-02-10D17:40:07.488573700, `:localhost:5010, localhost:5010, 211606100, unaryoperator
+show "hello world"
+
+/ 2025-02-10D17:40:23.604419500, `:localhost:5010, localhost:5010, 14155200, unaryoperator
+show "hello world"
+
+/ 2025-02-10D17:42:56.281196300, `:localhost:5010, localhost:5010, 87177200, unaryoperator
+show "hello world"
+
+/ 2025-02-10D17:43:26.697375600, `:localhost:5010, localhost:5010, 78854400, unaryoperator
+show "hello world"
+
+/ 2025-02-10D17:43:37.676083900, `:localhost:5010, localhost:5010, 6274500, unaryoperator
+show "hello world"
+
+/ 2025-02-10D17:43:59.847228100, `:localhost:5010, localhost:5010, 108631700, unaryoperator
+show "hello world"
+
+/ 2025-02-10D17:49:10.780498700, `:localhost:5010, localhost:5010, 80935200, unaryoperator
+show "hello world"
+
+/ 2025-02-10D17:49:37.641764800, `:localhost:5010, localhost:5010, 5711500, long[]
+10 +\: til 5 
+
+/ 2025-02-10D17:49:42.164891700, `:localhost:5010, localhost:5010, 5644300, ' 
++\: til 5 
+
+/ 2025-02-10D17:49:47.425002900, `:localhost:5010, localhost:5010, 6227600, projection
+(+\:) til 5 
+
+/ 2025-02-10D17:49:51.112679900, `:localhost:5010, localhost:5010, 6302600, projection
+(+\:)til 5 
+
+/ 2025-02-10D17:49:57.953030400, `:localhost:5010, localhost:5010, 5600900, projection
+(+\:) each til 5 
+
+/ 2025-02-10D17:50:02.088984200, `:localhost:5010, localhost:5010, 6065000, ' 
++\: til 5 
+
+/ 2025-02-10D17:50:12.359111400, `:localhost:5010, localhost:5010, 5496500, object[]
+0 (+\:) til 5 
+
+/ 2025-02-10D17:50:16.628262700, `:localhost:5010, localhost:5010, 6304500, projection
+ (+\:) til 5 
+
+/ 2025-02-10D17:50:32.611069500, `:localhost:5010, localhost:5010, 5936900, projection
+ (+/:) til 5
+
+/ 2025-02-10D17:50:36.546685800, `:localhost:5010, localhost:5010, 5066500, eachiterator
+ sums
+
+/ 2025-02-10D17:50:46.414736500, `:localhost:5010, localhost:5010, 4868400, ' 
+ +\ til 5
+
+/ 2025-02-10D17:50:51.694789300, `:localhost:5010, localhost:5010, 6287800, long[]
+         (+\)til 5
+
+/ 2025-02-10D17:50:57.844988900, `:localhost:5010, localhost:5010, 5773000, long[]
+(+\)til 5
+
+/ 2025-02-10D17:50:59.638744800, `:localhost:5010, localhost:5010, 6348700, long
+(+/)til 5
+
+/ 2025-02-10D17:51:01.665182400, `:localhost:5010, localhost:5010, 5446800, long[]
+(+\)til 5
+
+/ 2025-02-10D17:51:17.711409200, `:localhost:5010, localhost:5010, 5211200, long
+(+\)[10;1]
+
+/ 2025-02-10D17:51:20.383742300, `:localhost:5010, localhost:5010, 5428700, long
+(+\)[10;1]
+
+/ 2025-02-10D17:51:22.660372800, `:localhost:5010, localhost:5010, 5636000, long
+(+\)[10;0]
+
+/ 2025-02-10D17:51:31.065114800, `:localhost:5010, localhost:5010, 5377900, long
+(+\)[10;2]
+
+/ 2025-02-10D17:51:39.712795900, `:localhost:5010, localhost:5010, 6097700, long
+(+/)[10;2]
+
+/ 2025-02-10D17:51:41.252418500, `:localhost:5010, localhost:5010, 5057200, long
+(+\)[10;2]
+
+/ 2025-02-10D17:51:54.889042300, `:localhost:5010, localhost:5010, 5415800, long[]
+(+\)[10;til 2]
+
+/ 2025-02-10D17:52:26.289763, `:localhost:5010, localhost:5010, 5865800, object[]
+{x,sum -2#x}\[10;0 1]
+
+/ 2025-02-10D17:52:34.166176400, `:localhost:5010, localhost:5010, 5392500, long[]
+{x,sum -2#x}/[10;0 1]
+
+/ 2025-02-10D17:53:08.670881400, `:localhost:5010, localhost:5010, 5402300, long
+{$[x<=0;1;x*.z.s x-1]}[10]
+
+/ 2025-02-10D17:53:11.284313, `:localhost:5010, localhost:5010, 5590100, long
+{$[x<=0;1;x*.z.s x-1]}[5]
+
+/ 2025-02-10D17:54:27.447232400, `:localhost:5010, localhost:5010, 5840200, 'type
+t:(`time`sym`price`size)@/:(`time$();`$();`float$();`int$())
+
+/ 2025-02-10D17:54:35.217059200, `:localhost:5010, localhost:5010, 5612500, '/:
+t:(`time`sym`price`size)/:(`time$();`$();`float$();`int$())
+
+/ 2025-02-10D17:54:38.234069600, `:localhost:5010, localhost:5010, 5411600, unaryoperator
+t:(`time`sym`price`size),/:(`time$();`$();`float$();`int$())
+
+/ 2025-02-10D17:54:42.057751600, `:localhost:5010, localhost:5010, 5558900, object[]
+t
+
+/ 2025-02-10D17:55:02.477938200, `:localhost:5010, localhost:5010, 5024200, unaryoperator
+t:(`time`sym`price`size),\:(`time$();`$();`float$();`int$())
+
+/ 2025-02-10D17:55:05.597358100, `:localhost:5010, localhost:5010, 5118100, object[]
+t
+
+/ 2025-02-10D17:55:16.635935400, `:localhost:5010, localhost:5010, 5583000, 'time
+t:(`time`sym`price`size)@\:(`time$();`$();`float$();`int$())
+
+/ 2025-02-10D17:55:20.234518100, `:localhost:5010, localhost:5010, 5654600, unaryoperator
+t:(`time`sym`price`size)!(`time$();`$();`float$();`int$())
+
+/ 2025-02-10D17:55:22.500318200, `:localhost:5010, localhost:5010, 4958700, dict
+t
+
+/ 2025-02-10D17:55:28.014604900, `:localhost:5010, localhost:5010, 4987400, flip
+flip t
+
+/ 2025-02-10D17:55:33.524551500, `:localhost:5010, localhost:5010, 4643100, unaryoperator
+t:flip (`time`sym`price`size)!(`time$();`$();`float$();`int$())
+
+/ 2025-02-10D17:55:34.408004400, `:localhost:5010, localhost:5010, 5122100, dict
+flip t
+
+/ 2025-02-10D17:55:36.109761500, `:localhost:5010, localhost:5010, 6088600, flip
+t
+
+/ 2025-02-10D17:56:13.002864900, `:localhost:5010, localhost:5010, 4733200, long
+6*1000*60*60
+
+/ 2025-02-10D17:56:25.558236400, `:localhost:5010, localhost:5010, 2301125000, second[]
+(09:30:00+til 6*1000*60*60)
+
+/ 2025-02-10D17:57:30.059586, `:localhost:5010, localhost:5010, 8194100, long
+6*1000*60
+
+/ 2025-02-10D17:57:35.890102900, `:localhost:5010, localhost:5010, 29654500, second[]
+(09:30:00+til 6*1000*60)
+
+/ 2025-02-10D17:57:49.714136100, `:localhost:5010, localhost:5010, 6985000, second[]
+(09:30:00+til 6*60)
+
+/ 2025-02-10D17:58:17.106419700, `:localhost:5010, localhost:5010, 1017700800, second[]
+(09:30:00+til 60*60*1000)
+
+/ 2025-02-10D17:58:52.288915400, `:localhost:5010, localhost:5010, 6261100, second[]
+(09:30:00+ til 6*60*60)
+
+/ 2025-02-10D17:59:15.898833200, `:localhost:5010, localhost:5010, 5803200, long
+60*60
+
+/ 2025-02-10D17:59:34.140459700, `:localhost:5010, localhost:5010, 6275400, second[]
+(09:30:00+ 1000?6*60*60)
+
+/ 2025-02-10D17:59:49.411219800, `:localhost:5010, localhost:5010, 6409800, second[]
+(09:30:00+ (-1000)?6*60*60)
+
+/ 2025-02-10D17:59:59.448975600, `:localhost:5010, localhost:5010, 6999200, second[]
+(09:30:00+ asc (-1000)?6*60*60)
+
+/ 2025-02-10D18:00:18.972935, `:localhost:5010, localhost:5010, 5816200, time[]
+(09:30:00.000+ asc (-1000)?6*60*60)
+
+/ 2025-02-10D18:00:25.146856300, `:localhost:5010, localhost:5010, 6689600, time[]
+(09:30:00.000+ asc (-1000)?6*60*60*1000)
+
+/ 2025-02-10D18:01:39.741824200, `:localhost:5010, localhost:5010, 6434100, dict
+`time`sym`price`size!((09:30:00.000+ asc (-1000)?6*60*60*1000);1000?`3;1000?100;1000?200)
+
+/ 2025-02-10D18:01:49.908471900, `:localhost:5010, localhost:5010, 7057900, 'type
+insert[`t;`time`sym`price`size!((09:30:00.000+ asc (-1000)?6*60*60*1000);1000?`3;1000?100;1000?200)]
+
+/ 2025-02-10D18:02:00.671293700, `:localhost:5010, localhost:5010, 4939700, flip
+t
+
+/ 2025-02-10D18:02:11.868844800, `:localhost:5010, localhost:5010, 5632500, 'type
+insert[`t;`time`sym`price`size!((09:30:00.000+ asc (-1000)?6*60*60*1000);1000?`3;1000?100.0;1000?200)]
+
+/ 2025-02-10D18:02:21.309870700, `:localhost:5010, localhost:5010, 6301600, 'type
+insert[`t;(`time`sym`price`size)!((09:30:00.000+ asc (-1000)?6*60*60*1000);1000?`3;1000?100.0;1000?200)]
+
+/ 2025-02-10D18:02:24.119432200, `:localhost:5010, localhost:5010, 6908800, long[]
+insert[`t;flip (`time`sym`price`size)!((09:30:00.000+ asc (-1000)?6*60*60*1000);1000?`3;1000?100.0;1000?200)]
+
+/ 2025-02-10D18:02:32.937695600, `:localhost:5010, localhost:5010, 5441600, long[]
+insert[`t;((09:30:00.000+ asc (-1000)?6*60*60*1000);1000?`3;1000?100.0;1000?200)]
+
+/ 2025-02-10D18:02:37.793453400, `:localhost:5010, localhost:5010, 5180400, string
+delete from `t
+
+/ 2025-02-10D18:02:38.800886, `:localhost:5010, localhost:5010, 5175800, long[]
+insert[`t;((09:30:00.000+ asc (-1000)?6*60*60*1000);1000?`3;1000?100.0;1000?200)]
+
+/ 2025-02-10D18:02:41.036287800, `:localhost:5010, localhost:5010, 7348800, flip
+t
+
+/ 2025-02-10D18:02:56.752295600, `:localhost:5010, localhost:5010, 5534900, dict
+select count i by sym from t
+
+/ 2025-02-10D18:03:11.774669500, `:localhost:5010, localhost:5010, 6009000, long[]
+insert[`t;((09:30:00.000+ asc (-1000)?6*60*60*1000);1000?`aapl`msft`csco`ibm;1000?100.0;1000?200)]
+
+/ 2025-02-10D18:03:14.491547600, `:localhost:5010, localhost:5010, 4995600, string
+delete from `t
+
+/ 2025-02-10D18:03:15.391239100, `:localhost:5010, localhost:5010, 5798100, long[]
+insert[`t;((09:30:00.000+ asc (-1000)?6*60*60*1000);1000?`aapl`msft`csco`ibm;1000?100.0;1000?200)]
+
+/ 2025-02-10D18:03:16.544235100, `:localhost:5010, localhost:5010, 4730100, dict
+select count i by sym from t
+
+/ 2025-02-10D18:03:53.973122900, `:localhost:5010, localhost:5010, 5923700, dict
+select price[(iasc price)[1]] by sym from t
+
+/ 2025-02-10D18:04:00.361595400, `:localhost:5010, localhost:5010, 5016100, dict
+select price[(idesc price)[1]] by sym from t
+
+/ 2025-02-10D18:04:22.171270100, `:localhost:5010, localhost:5010, 11737200, dict
+select deltas price by sym from t
+
+/ 2025-02-10D18:04:57.501952, `:localhost:5010, localhost:5010, 5153200, unaryoperator
+t1:select  deltas price by sym from t
+
+/ 2025-02-10D18:05:07.443646, `:localhost:5010, localhost:5010, 3835400, unaryoperator
+t1:select  change:deltas price by sym from t
+
+/ 2025-02-10D18:05:38.649484, `:localhost:5010, localhost:5010, 5155100, 'change
+select signum change by sym from t
+
+/ 2025-02-10D18:05:40.702726300, `:localhost:5010, localhost:5010, 4839300, unaryoperator
+t1:select  change:deltas price by sym from t
+
+/ 2025-02-10D18:05:44.746972900, `:localhost:5010, localhost:5010, 11600800, dict
+select signum change by sym from t1
+
+/ 2025-02-10D18:05:50.009504900, `:localhost:5010, localhost:5010, 4590400, dict
+select count signum change by sym from t1
+
+/ 2025-02-10D18:06:04.103795800, `:localhost:5010, localhost:5010, 5346700, dict
+select  count i by signum change from t1
+
+/ 2025-02-10D18:06:50.676703400, `:localhost:5010, localhost:5010, 5444500, 'price
+select  count i by signum deltas price from t1
+
+/ 2025-02-10D18:06:54.264832500, `:localhost:5010, localhost:5010, 5096100, dict
+select  count i by signum deltas price from t
+
+/ 2025-02-10D19:03:10.234330500, `:localhost:5010, localhost:5010, 18464000, unaryoperator
+show "hello world"
+
+/ 2025-02-10D19:03:33.082790100, `:localhost:5010, localhost:5010, 328807400, unaryoperator
+show "hello world"
+
+/ 2025-02-10D19:04:23.928256600, `:localhost:5010, localhost:5010, 7714100, long
+17-8
+
+/ 2025-02-10D19:05:27.584381600, `:localhost:5010, localhost:5010, 5618100, string[]
+5#`3
+
+/ 2025-02-10D19:05:32.917745, `:localhost:5010, localhost:5010, 4917400, string[]
+5?`3
+
+/ 2025-02-10D19:05:38.417806500, `:localhost:5010, localhost:5010, 5834700, string[]
+1000?5?`3
+
+/ 2025-02-10D19:05:46.434152600, `:localhost:5010, localhost:5010, 5497700, dict
+group 1000?5?`3
+
+/ 2025-02-10D19:06:50.290662800, `:localhost:5010, localhost:5010, 7034700, unaryoperator
+trade:([] time:`time$();sym:`$();price:`float$();size:`long$())
+
+/ 2025-02-10D19:06:57.274937400, `:localhost:5010, localhost:5010, 6934200, long[]
+`trade insert (08:00:00.000+asc 1000? 9*60*60*1000;1000?5?`3;1000?100.0;1000?1000)
+
+/ 2025-02-10D19:07:00.980091200, `:localhost:5010, localhost:5010, 10918900, flip
+trade
+
+/ 2025-02-10D19:07:09.680218700, `:localhost:5010, localhost:5010, 4650200, long
+count trade
+
+/ 2025-02-10D19:07:55.425370300, `:localhost:5010, localhost:5010, 4690400, 'n
+`trade insert (08:00:00.000+asc n? 9*60*60*1000;n?5?`3;n?100.0;n?1000)
+
+/ 2025-02-10D19:07:56.871722100, `:localhost:5010, localhost:5010, 5168700, unaryoperator
+n:1000000
+
+/ 2025-02-10D19:07:57.548477400, `:localhost:5010, localhost:5010, 230294400, long[]
+`trade insert (08:00:00.000+asc n? 9*60*60*1000;n?5?`3;n?100.0;n?1000)
+
+/ 2025-02-10D19:07:59.641390500, `:localhost:5010, localhost:5010, 5279700, long
+count trade
+
+/ 2025-02-10D19:08:13.309362500, `:localhost:5010, localhost:5010, 9201900, unaryoperator
+trade:([] time:`time$();sym:`$();price:`float$();size:`long$())
+
+/ 2025-02-10D19:08:14.471398300, `:localhost:5010, localhost:5010, 210972800, long[]
+`trade insert (08:00:00.000+asc n? 9*60*60*1000;n?5?`3;n?100.0;n?1000)
+
+/ 2025-02-10D19:08:15.868179600, `:localhost:5010, localhost:5010, 5524700, long
+count trade
+
+/ 2025-02-10D19:09:20.657488700, `:localhost:5010, localhost:5010, 20597100, dict
+select max price by sym from trade 
+
+/ 2025-02-10D19:10:00.466942100, `:localhost:5010, localhost:5010, 1208744100, flip
+update mi:(iasc price)[0] by sym from trade 
+
+/ 2025-02-10D19:10:08.529186300, `:localhost:5010, localhost:5010, 4459450600, flip
+update mi:(iasc price)[0] by sym from trade 
+
+/ 2025-02-10D19:11:08.183602200, `:localhost:5010, localhost:5010, 12257600, dict
+ select max price by sym from trade 
+
+/ 2025-02-10D19:11:33.852416300, `:localhost:5010, localhost:5010, 5706500, 'sym
+ select   from trade price=(max;`price) fby sym 
+
+/ 2025-02-10D19:11:40.473770600, `:localhost:5010, localhost:5010, 5557300, 'type
+ select   from trade price=(max;`price) fby `sym 
+
+/ 2025-02-10D19:11:48.051642300, `:localhost:5010, localhost:5010, 5899700, 'type
+ select  from trade price=(max;`price) fby `sym 
+
+/ 2025-02-10D19:11:54.158956200, `:localhost:5010, localhost:5010, 6634500, 'type
+ select  from trade price=(max;`price) fby `sym 
+
+/ 2025-02-10D19:11:55.208306700, `:localhost:5010, localhost:5010, 5444900, 'type
+ select  from trade price=(`max;`price) fby `sym 
+
+/ 2025-02-10D19:11:56.449769500, `:localhost:5010, localhost:5010, 5289300, 'type
+ select  from trade price=(max;`price) fby `sym 
+
+/ 2025-02-10D19:12:09.125330400, `:localhost:5010, localhost:5010, 10386300, 'type
+ select  from trade price=(max;`price) fby `sym
+
+/ 2025-02-10D19:12:13.831346500, `:localhost:5010, localhost:5010, 7232600, 'price
+ select  from trade price=(max;price) fby `sym
+
+/ 2025-02-10D19:12:16.285617300, `:localhost:5010, localhost:5010, 5505100, 'type
+ select  from trade price=(max;`price) fby `sym
+
+/ 2025-02-10D19:12:26.751125800, `:localhost:5010, localhost:5010, 5945800, 'sym
+ select  from trade price=(max;`price) fby sym
+
+/ 2025-02-10D19:12:51.978610600, `:localhost:5010, localhost:5010, 12080400, unaryoperator
+t:select maxPrice: max price by sym from trade
+
+/ 2025-02-10D19:13:16.158636300, `:localhost:5010, localhost:5010, 21402800, unaryoperator
+t:select i,maxPrice: max price by sym from trade
+
+/ 2025-02-10D19:13:18.458975900, `:localhost:5010, localhost:5010, 40409300, dict
+t
+
+/ 2025-02-10D19:13:37.080218900, `:localhost:5010, localhost:5010, 5665800, 'type
+ select  from trade price=(max;`price) fby `sym
+
+/ 2025-02-10D19:13:45.571794400, `:localhost:5010, localhost:5010, 4243000, 'type
+ select  from trade price=(max;`price) fby `sym
+
+/ 2025-02-10D19:13:52.545542900, `:localhost:5010, localhost:5010, 4803600, 'sym
+ select  from trade price=(max;`price) fby sym
+
+/ 2025-02-10D19:13:57.019958100, `:localhost:5010, localhost:5010, 5202100, unaryoperator
+trade:([] time:`time$();symbol:`$();price:`float$();size:`long$())
+
+/ 2025-02-10D19:13:58.405483800, `:localhost:5010, localhost:5010, 172468300, long[]
+`trade insert (08:00:00.000+asc n? 9*60*60*1000;n?5?`3;n?100.0;n?1000)
+
+/ 2025-02-10D19:14:01.226525300, `:localhost:5010, localhost:5010, 6738600, 'sym
+ select  from trade price=(max;`price) fby sym
+
+/ 2025-02-10D19:14:04.803401600, `:localhost:5010, localhost:5010, 4897700, 'symbol
+ select  from trade price=(max;`price) fby symbol
+
+/ 2025-02-10D19:14:16.723233600, `:localhost:5010, localhost:5010, 4419000, 'length
+ select  from trade where price=(max;`price) fby symbol
+
+/ 2025-02-10D19:14:25.132823500, `:localhost:5010, localhost:5010, 5403700, 'length
+ select  from trade where price in (max;`price) fby symbol
+
+/ 2025-02-10D19:14:29.397342500, `:localhost:5010, localhost:5010, 6649800, 'length
+ select  from trade where price = (max;`price) fby symbol
+
+/ 2025-02-10D19:14:34.261475300, `:localhost:5010, localhost:5010, 4759900, 'length
+ select  from trade where price=(max;`price) fby symbol
+
+/ 2025-02-10D19:14:43.957008900, `:localhost:5010, localhost:5010, 4572700, 'length
+ select  from trade where price=/:(max;`price) fby symbol
+
+/ 2025-02-10D19:14:45.902581500, `:localhost:5010, localhost:5010, 5097900, 'length
+ select  from trade where price=(max;`price) fby symbol
+
+/ 2025-02-10D19:14:58.448788100, `:localhost:5010, localhost:5010, 6368900, 'length
+ select  time,symbol from trade where price=(max;`price) fby symbol
+
+/ 2025-02-10D19:15:15.572467, `:localhost:5010, localhost:5010, 4982300, flip
+10#trade
+
+/ 2025-02-10D19:15:22.412188900, `:localhost:5010, localhost:5010, 5648100, 'length
+ select  time,symbol from trade where price<(max;`price) fby symbol
+
+/ 2025-02-10D19:15:33.335943500, `:localhost:5010, localhost:5010, 4798900, 'length
+ select  from trade where price<(max;`price) fby symbol
+
+/ 2025-02-10D19:15:41.156102800, `:localhost:5010, localhost:5010, 6938900, unaryoperator
+trade:([] time:`time$();symbol:`$();price:`float$();size:`long$())
+
+/ 2025-02-10D19:15:43.515201800, `:localhost:5010, localhost:5010, 175666100, long[]
+`trade insert (08:00:00.000+asc n? 9*60*60*1000;n?5?`3;n?100.0;n?1000)
+
+/ 2025-02-10D19:15:45.837339500, `:localhost:5010, localhost:5010, 5764200, flip
+10#trade
+
+/ 2025-02-10D19:15:59.160227400, `:localhost:5010, localhost:5010, 4750400, 'length
+ select  from trade where price<(max;`price) fby symbol
+
+/ 2025-02-10D19:16:04.738701900, `:localhost:5010, localhost:5010, 6953500, 'length
+ select  from trade where price<(max;`size) fby symbol
+
+/ 2025-02-10D19:16:14.439203500, `:localhost:5010, localhost:5010, 1712386800, flip
+ select  from trade where price<(max;size) fby symbol
+
+/ 2025-02-10D19:16:30.289601, `:localhost:5010, localhost:5010, 162794900, flip
+ select time,symbol  from trade where price<(max;size) fby symbol
+
+/ 2025-02-10D19:16:47.073612200, `:localhost:5010, localhost:5010, 49163100, object[]
+\ls
+
+/ 2025-02-10D19:17:02.647779600, `:localhost:5010, localhost:5010, 56524600, unaryoperator
+ t:select time,symbol  from trade where price<(max;size) fby symbol
+
+/ 2025-02-10D19:17:08.383806500, `:localhost:5010, localhost:5010, 21935800, string
+`:t set t
+
+/ 2025-02-10D19:17:16.572012300, `:localhost:5010, localhost:5010, 82460500, flip
+get `:t
+
+/ 2025-02-10D19:17:28.004630200, `:localhost:5010, localhost:5010, 4960400, 'type
+`:t1/ set t
+
+/ 2025-02-10D19:17:42.767635800, `:localhost:5010, localhost:5010, 5101200, 'type
+`:t2/ set t
+
+/ 2025-02-10D19:18:07.226368400, `:localhost:5010, localhost:5010, 36873000, string
+`:t2/ set .Q.en[`:.;t] 
+
+/ 2025-02-10D19:18:31.798682, `:localhost:5010, localhost:5010, 43034600, string
+`:t2/2025.02.10/ set .Q.en[`:.;t] 
+
+/ 2025-02-10D19:18:38.956026100, `:localhost:5010, localhost:5010, 32676400, string
+`:hdb/2025.02.10/ set .Q.en[`:.;t] 
+
+/ 2025-02-10D19:20:27.488647300, `:localhost:5010, localhost:5010, 4832200, 'type
+.Q.dpft[`:hdb/2025.02.11;2025.02.10;`p#`sym;t]
+
+/ 2025-02-10D19:20:39.830817300, `:localhost:5010, localhost:5010, 4619700, 'type
+.Q.dpft[`:hdb/2025.02.11;2025.02.10;`sym;t]
+
+/ 2025-02-10D19:20:48.085844300, `:localhost:5010, localhost:5010, 6036300, projection
+.Q.dpft
+
+/ 2025-02-10D19:21:29.671768300, `:localhost:5010, localhost:5010, 5591900, 'type
+.Q.dpft[`:hdb/2025.02.11;2025.02.10;`symbol;t]
+
+/ 2025-02-10D19:21:58.703081700, `:localhost:5010, localhost:5010, 6975400, 'type
+.Q.dpft[`:hdb;2025.02.11;`symbol;t]
+
+/ 2025-02-10D19:22:41.588885500, `:localhost:5010, localhost:5010, 54277000, string
+.Q.dpft[`:hdb;2025.02.11;`symbol;`t]
+
+/ 2025-02-10D19:23:27.218887400, `:localhost:5010, localhost:5010, 113221400, flip
+t
+
+/ 2025-02-10D19:35:11.883406100, `:localhost:5010, localhost:5010, 8361500, projection
+.Q.en
+
+/ 2025-02-10D19:51:46.746327, `:localhost:5010, localhost:5010, 20123900, unaryoperator
+trade:([] time:`s#`time$();symbol:`g#`$();price:`float$();size:`long$())
+
+/ 2025-02-10D19:51:50.720148300, `:localhost:5010, localhost:5010, 7292600, flip
+trade
+
+/ 2025-02-10D19:51:55.135968200, `:localhost:5010, localhost:5010, 6026500, dict
+meta trade
+
+/ 2025-02-10D19:52:03.018076400, `:localhost:5010, localhost:5010, 440005200, long[]
+`trade insert (08:00:00.000+asc n? 9*60*60*1000;n?5?`3;n?100.0;n?1000)
+
+/ 2025-02-10D19:52:07.050323800, `:localhost:5010, localhost:5010, 5013400, dict
+meta trade
+
+/ 2025-02-10D19:52:15.401558, `:localhost:5010, localhost:5010, 6876600, long
+count trade
+
+/ 2025-02-10D19:52:18.847932900, `:localhost:5010, localhost:5010, 4639800, dict
+meta trade
+
+/ 2025-02-10D19:53:08.041471900, `:localhost:5010, localhost:5010, 6074000, unaryoperator
+t:([] syms:`appl`csco`msft`ibm;pl:4#`2)
+
+/ 2025-02-10D19:54:17.455436600, `:localhost:5010, localhost:5010, 4636500, unaryoperator
+t:([] syms:`appl`csco`msft`ibm;pl:4#`2)
+
+/ 2025-02-10D19:54:18.168070300, `:localhost:5010, localhost:5010, 9743100, 'time.sym
+trade:([] time:`s#`time$();symbol:`g#`$();price:`float$();size:`long$();fk:`t$time.sym)
+
+/ 2025-02-10D19:54:24.187872700, `:localhost:5010, localhost:5010, 5058400, 'type
+trade:([] time:`s#`time$();symbol:`g#`$();price:`float$();size:`long$();fk:`t$t.syms)
+

@@ -1,0 +1,164 @@
+/
+File format:
+ <timestamp>, <instance uri>, <instance name>, <roundtrip, nanos>, <result type or error message>
+ <Full query>
+ <line separator>
+\
+/ 2025-02-08D18:55:55.689318200, `:localhost:5010, localhost:5010, 202803300, 'Instance is not connected
+{
+    / fix for root namespace
+    v:$[x=y; x; ` sv x,y];
+    / list of all inner namespaces - we get all keys that has ` as the first key and it's value is (::) - that's namespace
+    ns:l where {$[`~first key x; (::)~x[`]; 0b]} each ` sv'v,'l:key[v] except `;
+    / get all functions, tables, variables in current namespace
+    r:(system') ("fav",\:" "),\:string v;
+    / Functions
+    fns:{v:$[x=`; y; ` sv x,y]; t:type value v; a:$[112h=t; enlist `; 4h=type first s:2 value/v; s 1; $[t in 101 103h; enlist `x; t in 102 106 107 108 109 110 111h; `x`y; enlist `]]; (y;t;a)}[v;] each r[0];
+    / return the table details in format (name;size;meta;keys)
+    tbs:{v:$[x=`; y; ` sv x,y]; (y;count value v;0!meta v;keys v)}[v;] each r[1];
+    / variables are anything except namespaces and tables. We get (name;type;description) for each
+    /   for dictionary - (size;keys type; values type)
+    / Description depends on the type and is:
+    vrs:{v:$[x=`; get y; x[y]]; t:type v; (y;t;$[99h=t; (count v;type key v;type value v); ()])}[v;] each r[2] except ns,r[1];
+    / return final result; (namespace;function;tables;variables;list of inner namespaces or an error)
+    (y;fns;tbs;vrs;.z.s[v;] each ns)
+ }[`; `]
+
+/ 2025-02-08D18:56:17.001907600, `:localhost:5011, `:localhost:5011, 127654300, object[]
+{
+    / fix for root namespace
+    v:$[x=y; x; ` sv x,y];
+    / list of all inner namespaces - we get all keys that has ` as the first key and it's value is (::) - that's namespace
+    ns:l where {$[`~first key x; (::)~x[`]; 0b]} each ` sv'v,'l:key[v] except `;
+    / get all functions, tables, variables in current namespace
+    r:(system') ("fav",\:" "),\:string v;
+    / Functions
+    fns:{v:$[x=`; y; ` sv x,y]; t:type value v; a:$[112h=t; enlist `; 4h=type first s:2 value/v; s 1; $[t in 101 103h; enlist `x; t in 102 106 107 108 109 110 111h; `x`y; enlist `]]; (y;t;a)}[v;] each r[0];
+    / return the table details in format (name;size;meta;keys)
+    tbs:{v:$[x=`; y; ` sv x,y]; (y;count value v;0!meta v;keys v)}[v;] each r[1];
+    / variables are anything except namespaces and tables. We get (name;type;description) for each
+    /   for dictionary - (size;keys type; values type)
+    / Description depends on the type and is:
+    vrs:{v:$[x=`; get y; x[y]]; t:type v; (y;t;$[99h=t; (count v;type key v;type value v); ()])}[v;] each r[2] except ns,r[1];
+    / return final result; (namespace;function;tables;variables;list of inner namespaces or an error)
+    (y;fns;tbs;vrs;.z.s[v;] each ns)
+ }[`; `]
+
+/ 2025-02-08D19:01:58.251004600, `:localhost:5011, `:localhost:5011, 8074900, 'map
+map
+
+/ 2025-02-08D19:02:01.506719700, `:localhost:5011, `:localhost:5011, 6796900, unaryoperator
+map:()!();
+
+/ 2025-02-08D19:02:06.980595300, `:localhost:5011, `:localhost:5011, 5987300, dict
+map
+
+/ 2025-02-08D19:07:44.402490100, `:localhost:5011, `:localhost:5011, 11043100, unaryoperator
+function:{[num;handle]
+    l:neg[1+til num];
+    -30!(l;0b;"");
+  };
+
+/ 2025-02-08D19:09:12.663213800, `:localhost:5011, `:localhost:5011, 12107100, unaryoperator
+map:()!();
+
+/ 2025-02-08D19:09:14.607028400, `:localhost:5011, `:localhost:5011, 10572000, 'srvname
+    h:map[srvname];
+
+/ 2025-02-08D19:09:24.531950300, `:localhost:5011, `:localhost:5011, 9910400, unaryoperator
+    h:map[`srvname];
+
+/ 2025-02-08D19:09:25.671441300, `:localhost:5011, `:localhost:5011, 9918600, 'srvname
+    h:map[srvname];
+
+/ 2025-02-08D19:09:29.520225400, `:localhost:5011, `:localhost:5011, 9446200, object[]
+h
+
+/ 2025-02-08D19:09:36.099739900, `:localhost:5011, `:localhost:5011, 10571900, object[]
+not null h
+
+/ 2025-02-08D19:09:40.591477700, `:localhost:5011, `:localhost:5011, 8755900, object[]
+null h
+
+/ 2025-02-08D19:09:50.988989100, `:localhost:5011, `:localhost:5011, 9692600, object[]
+null h
+
+/ 2025-02-08D19:09:51.778111600, `:localhost:5011, `:localhost:5011, 9945800, object[]
+null h
+
+/ 2025-02-08D19:09:52.064803800, `:localhost:5011, `:localhost:5011, 10230100, object[]
+null h
+
+/ 2025-02-08D19:09:52.301166900, `:localhost:5011, `:localhost:5011, 12644500, object[]
+null h
+
+/ 2025-02-08D19:09:56.679457900, `:localhost:5011, `:localhost:5011, 10371500, 'srvname
+    h:map[srvname];
+
+/ 2025-02-08D19:09:59.306407700, `:localhost:5011, `:localhost:5011, 10586100, unaryoperator
+    h:map[`srvname];
+
+/ 2025-02-08D19:10:01.683585700, `:localhost:5011, `:localhost:5011, 10179800, object[]
+h
+
+/ 2025-02-08D19:10:14.067361400, `:localhost:5011, `:localhost:5011, 10404500, unaryoperator
+    h:map[`srvname];
+
+/ 2025-02-08D19:10:14.888379700, `:localhost:5011, `:localhost:5011, 12778000, 'handle
+    $[count h;neg[h](value (funcname;param;handle));(value (funcname;param;handle))]
+
+/ 2025-02-08D19:10:21.660693800, `:localhost:5011, `:localhost:5011, 9896200, unaryoperator
+.z.pg : {
+    r:value x;
+    srvname:r`srvname;
+    funcname:r`funcname;
+    param:r`param;
+    handle:.z.w;
+    h:map[`srvname];
+    $[count h;neg[h](value (funcname;param;handle));(value (funcname;param;handle))]
+    -30!(::);
+ };
+
+/ 2025-02-08D19:10:26.405233700, `:localhost:5011, `:localhost:5011, 49928864800, 'null
+function:{[num;handle]
+    l:neg[1+til num];
+    -30!(l;0b;"");
+  };
+
+/ 2025-02-08D19:12:38.862789500, `:localhost:5010, `:localhost:5010, 127877000, object[]
+{
+    / fix for root namespace
+    v:$[x=y; x; ` sv x,y];
+    / list of all inner namespaces - we get all keys that has ` as the first key and it's value is (::) - that's namespace
+    ns:l where {$[`~first key x; (::)~x[`]; 0b]} each ` sv'v,'l:key[v] except `;
+    / get all functions, tables, variables in current namespace
+    r:(system') ("fav",\:" "),\:string v;
+    / Functions
+    fns:{v:$[x=`; y; ` sv x,y]; t:type value v; a:$[112h=t; enlist `; 4h=type first s:2 value/v; s 1; $[t in 101 103h; enlist `x; t in 102 106 107 108 109 110 111h; `x`y; enlist `]]; (y;t;a)}[v;] each r[0];
+    / return the table details in format (name;size;meta;keys)
+    tbs:{v:$[x=`; y; ` sv x,y]; (y;count value v;0!meta v;keys v)}[v;] each r[1];
+    / variables are anything except namespaces and tables. We get (name;type;description) for each
+    /   for dictionary - (size;keys type; values type)
+    / Description depends on the type and is:
+    vrs:{v:$[x=`; get y; x[y]]; t:type v; (y;t;$[99h=t; (count v;type key v;type value v); ()])}[v;] each r[2] except ns,r[1];
+    / return final result; (namespace;function;tables;variables;list of inner namespaces or an error)
+    (y;fns;tbs;vrs;.z.s[v;] each ns)
+ }[`; `]
+
+/ 2025-02-08D19:12:47.772334900, `:localhost:5010, `:localhost:5010, 12571800, unaryoperator
+function:{[num;handle]
+    l:neg[1+til num];
+    -30!(l;0b;"");
+  };
+map:()!();
+.z.pg : {
+    r:value x;
+    srvname:r`srvname;
+    funcname:r`funcname;
+    param:r`param;
+    handle:.z.w;
+    h:map[`srvname];
+    $[count h;neg[h](value (funcname;param;handle));(value (funcname;param;handle))]
+    -30!(::);
+ };
+

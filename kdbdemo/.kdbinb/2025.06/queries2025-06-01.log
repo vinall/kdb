@@ -1,0 +1,234 @@
+/
+File format:
+ <timestamp>, <instance uri>, <instance name>, <roundtrip, nanos>, <result type or error message>
+ <Full query>
+ <line separator>
+\
+/ 2025-06-01D09:10:53.929062800, `:localhost:5010, localsrv/ubuntusrv, 25125600, unaryoperator
+t:([sym:`appl`msft`csco] updated_at:3?.z.T);
+
+/ 2025-06-01D09:12:38.732397100, `:localhost:5010, localsrv/ubuntusrv, 11391100, unaryoperator
+trade:([] time:`time$(); sym:`t$(); price:`float$(); size:`long$() )
+
+/ 2025-06-01D09:12:40.595531500, `:localhost:5010, localsrv/ubuntusrv, 12473700, unaryoperator
+t:([sym:`appl`msft`csco] updated_at:3?.z.T);
+
+/ 2025-06-01D09:12:45.707346300, `:localhost:5010, localsrv/ubuntusrv, 18616100, dict
+meta trade
+
+/ 2025-06-01D09:15:12.907649200, `:localhost:5010, localsrv/ubuntusrv, 10367700, 'sym
+t.sym
+
+/ 2025-06-01D09:15:24.470431900, `:localhost:5010, localsrv/ubuntusrv, 17849001, dict
+t[`sym]
+
+/ 2025-06-01D09:15:46.232280100, `:localhost:5010, localsrv/ubuntusrv, 11099299, dict
+t[`sym]
+
+/ 2025-06-01D09:15:52.987180500, `:localhost:5010, localsrv/ubuntusrv, 11675000, dict
+t
+
+/ 2025-06-01D09:16:09.496943900, `:localhost:5010, localsrv/ubuntusrv, 9512800, dict
+t
+
+/ 2025-06-01D09:18:17.225471700, `:localhost:5010, localsrv/ubuntusrv, 10514300, 'n
+n?1000
+
+/ 2025-06-01D09:18:19.856638, `:localhost:5010, localsrv/ubuntusrv, 10598700, unaryoperator
+n:10000;
+
+/ 2025-06-01D09:18:22.899290400, `:localhost:5010, localsrv/ubuntusrv, 13424500, long[]
+n?1000
+
+/ 2025-06-01D09:18:33.290245900, `:localhost:5010, localsrv/ubuntusrv, 11336800, 'type
+`trade insert [(n?.z.T;n?`appl`msft`csco;n?1000;n?100000)]
+
+/ 2025-06-01D09:18:37.936433500, `:localhost:5010, localsrv/ubuntusrv, 11332200, 'type
+`trade insert [(n?.z.T;n?`appl`msft`csco;n?1000;n?1000)]
+
+/ 2025-06-01D09:18:45.893338100, `:localhost:5010, localsrv/ubuntusrv, 11516200, 'type
+`trade insert [(n?.z.T;n?`appl`msft`csco;n?1000.0;n?1000)]
+
+/ 2025-06-01D09:18:48.972837600, `:localhost:5010, localsrv/ubuntusrv, 10883500, flip
+trade
+
+/ 2025-06-01D09:18:51.886814600, `:localhost:5010, localsrv/ubuntusrv, 10107300, unaryoperator
+t:([sym:`appl`msft`csco] updated_at:3?.z.T);
+
+/ 2025-06-01D09:18:53.531788500, `:localhost:5010, localsrv/ubuntusrv, 9906000, unaryoperator
+trade:([] time:`time$(); sym:`t$(); price:`float$(); size:`long$() )
+
+/ 2025-06-01D09:19:21.046181, `:localhost:5010, localsrv/ubuntusrv, 10245600, dict
+meta trade
+
+/ 2025-06-01D09:19:29.796773200, `:localhost:5010, localsrv/ubuntusrv, 19373100, object[]
+(n?.z.T;n?`appl`msft`csco;n?1000.0;n?1000)
+
+/ 2025-06-01D09:19:44.943717700, `:localhost:5010, localsrv/ubuntusrv, 11808300, 'type
+`trade insert [(n?.z.T;n?`appl`msft`csco;n?1000.0;n?1000)]
+
+/ 2025-06-01D09:19:50.102206600, `:localhost:5010, localsrv/ubuntusrv, 12670600, long[]
+`trade insert (n?.z.T;n?`appl`msft`csco;n?1000.0;n?1000)
+
+/ 2025-06-01D09:19:53.029877800, `:localhost:5010, localsrv/ubuntusrv, 15518900, flip
+trade
+
+/ 2025-06-01D09:20:49.293365, `:localhost:5010, localsrv/ubuntusrv, 15371300, object[]
+(n?.z.T;n?`appl1`msft`csco;n?1000.0;n?1000)
+
+/ 2025-06-01D09:21:00.552042300, `:localhost:5010, localsrv/ubuntusrv, 12730000, 'cast
+`trade insert (n?.z.T;n?`appl1`msft`csco;n?1000.0;n?1000)
+
+/ 2025-06-01D09:21:04.309112700, `:localhost:5010, localsrv/ubuntusrv, 10366200, dict
+meta trade
+
+/ 2025-06-01D09:40:04.403138700, `:localhost:5010, localsrv/ubuntusrv, 11243000, time[]
+trade.time
+
+/ 2025-06-01D09:40:11.019365300, `:localhost:5010, localsrv/ubuntusrv, 10491700, 'sym
+t.sym
+
+/ 2025-06-01D09:40:19.060280100, `:localhost:5010, localsrv/ubuntusrv, 9833200, 'updated_at
+t.updated_at
+
+/ 2025-06-01D09:40:27.445061, `:localhost:5010, localsrv/ubuntusrv, 10324000, dict
+t[`sym]
+
+/ 2025-06-01D09:40:39.186697900, `:localhost:5010, localsrv/ubuntusrv, 9970100, flip
+key t
+
+/ 2025-06-01D09:40:47.559150900, `:localhost:5010, localsrv/ubuntusrv, 10732000, dict
+raze key t
+
+/ 2025-06-01D10:56:10.286797700, `:localhost:5010, localsrv/ubuntusrv, 12851000, unaryoperator
+t:([]sym:`appl`msft`csco; updated_at:3?.z.T);
+
+/ 2025-06-01D10:56:11.633349600, `:localhost:5010, localsrv/ubuntusrv, 10596300, 'type
+trade:([] time:`time$(); sym:`t$(); price:`float$(); size:`long$() )
+
+/ 2025-06-01D10:56:15.620343900, `:localhost:5010, localsrv/ubuntusrv, 10962400, 't
+`trade insert (n?.z.T;n?`appl`msft`csco;n?1000.0;n?1000)
+
+/ 2025-06-01D10:56:18.968044100, `:localhost:5010, localsrv/ubuntusrv, 10205200, unaryoperator
+t:([]sym:`appl`msft`csco; updated_at:3?.z.T);
+
+/ 2025-06-01D10:56:20.327883600, `:localhost:5010, localsrv/ubuntusrv, 9969601, 'type
+trade:([] time:`time$(); sym:`t$(); price:`float$(); size:`long$() )
+
+/ 2025-06-01D10:56:24.438416900, `:localhost:5010, localsrv/ubuntusrv, 10076201, 't
+`trade insert (n?.z.T;n?`appl`msft`csco;n?1000.0;n?1000)
+
+/ 2025-06-01D10:56:28.083312700, `:localhost:5010, localsrv/ubuntusrv, 11327600, 't
+`trade insert (n?.z.T;n?`appl`msft`csco;n?1000.0;n?1000)
+
+/ 2025-06-01D10:56:29.269846600, `:localhost:5010, localsrv/ubuntusrv, 10702500, 't
+`trade insert (n?.z.T;n?`appl`msft`csco;n?1000.0;n?1000)
+
+/ 2025-06-01D10:56:29.643704400, `:localhost:5010, localsrv/ubuntusrv, 11340901, 't
+`trade insert (n?.z.T;n?`appl`msft`csco;n?1000.0;n?1000)
+
+/ 2025-06-01D10:56:29.978500200, `:localhost:5010, localsrv/ubuntusrv, 10060599, 't
+`trade insert (n?.z.T;n?`appl`msft`csco;n?1000.0;n?1000)
+
+/ 2025-06-01D10:56:33.101902500, `:localhost:5010, localsrv/ubuntusrv, 10373600, unaryoperator
+t:([]sym:`appl`msft`csco; updated_at:3?.z.T);
+
+/ 2025-06-01D10:56:35.703225900, `:localhost:5010, localsrv/ubuntusrv, 10828799, 'type
+trade:([] time:`time$(); sym:`t$(); price:`float$(); size:`long$() )
+
+/ 2025-06-01D10:56:38.259466600, `:localhost:5010, localsrv/ubuntusrv, 10265300, 'type
+trade:([] time:`time$(); sym:`t$(); price:`float$(); size:`long$() );
+
+/ 2025-06-01D10:56:46.019138400, `:localhost:5010, localsrv/ubuntusrv, 9229600, ')
+trade:([] time:`time$(); sym:`$()); price:`float$(); size:`long$() );
+
+/ 2025-06-01D10:56:47.143758100, `:localhost:5010, localsrv/ubuntusrv, 9296599, unaryoperator
+trade:([] time:`time$(); sym:`$(); price:`float$(); size:`long$() );
+
+/ 2025-06-01D10:56:49.682148900, `:localhost:5010, localsrv/ubuntusrv, 11008200, long[]
+`trade insert (n?.z.T;n?`appl`msft`csco;n?1000.0;n?1000)
+
+/ 2025-06-01D10:57:12.587090800, `:localhost:5010, localsrv/ubuntusrv, 13020200, flip
+update `t!(t.sym?sym) from trade
+
+/ 2025-06-01D10:57:19.871265800, `:localhost:5010, localsrv/ubuntusrv, 13551901, flip
+update nlink:`t!(t.sym?sym) from trade
+
+/ 2025-06-01D10:57:25.121850700, `:localhost:5010, localsrv/ubuntusrv, 9218301, string
+update nlink:`t!(t.sym?sym) from `trade
+
+/ 2025-06-01D10:57:47.880638500, `:localhost:5010, localsrv/ubuntusrv, 10632000, flip
+select nlink.updated_at from trade
+
+/ 2025-06-01D15:13:30.899798700, `:localhost:5010, localsrv/ubuntusrv, 41848800, object[]
+(n?1000;n?100f;n?`3) 
+
+/ 2025-06-01D15:13:37.088685100, `:localhost:5010, localsrv/ubuntusrv, 41380600, string
+`:a 1: (n?1000;n?100f;n?`3) 
+
+/ 2025-06-01D15:13:44.643873, `:localhost:5010, localsrv/ubuntusrv, 23636400, object[]
+get`:a
+
+/ 2025-06-01D15:14:03.163842900, `:localhost:5010, localsrv/ubuntusrv, 75267300, object[]
+\rm a
+
+/ 2025-06-01D15:14:17.358359200, `:localhost:5010, localsrv/ubuntusrv, 33248500, string
+`:a 1: (col1:n?1000;col2:n?100f;col3:n?`3)
+
+/ 2025-06-01D15:14:19.473071800, `:localhost:5010, localsrv/ubuntusrv, 17494800, object[]
+get`:a
+
+/ 2025-06-01D15:14:24.368441600, `:localhost:5010, localsrv/ubuntusrv, 41047400, object[]
+\rm a
+
+/ 2025-06-01D15:14:31.686078200, `:localhost:5010, localsrv/ubuntusrv, 25934000, object[]
+flip (col1:n?1000;col2:n?100f;col3:n?`3)
+
+/ 2025-06-01D15:14:39.542643100, `:localhost:5010, localsrv/ubuntusrv, 14373200, object[]
+(col1:n?1000;col2:n?100f;col3:n?`3)
+
+/ 2025-06-01D15:14:45.690405600, `:localhost:5010, localsrv/ubuntusrv, 15021600, object[]
+enlist (col1:n?1000;col2:n?100f;col3:n?`3)
+
+/ 2025-06-01D15:15:15.095206500, `:localhost:5010, localsrv/ubuntusrv, 14410700, object[]
+(n?1000;n?100f;n?`3)
+
+/ 2025-06-01D15:15:17.909938200, `:localhost:5010, localsrv/ubuntusrv, 26451700, string
+`:a 1: (n?1000;n?100f;n?`3)
+
+/ 2025-06-01D15:15:21.113610900, `:localhost:5010, localsrv/ubuntusrv, 63146900, object[]
+\ls -lrht
+
+/ 2025-06-01D15:15:28.508690600, `:localhost:5010, localsrv/ubuntusrv, 48151800, object[]
+\ls -lrht a*
+
+/ 2025-06-01D15:15:59.606652100, `:localhost:5010, localsrv/ubuntusrv, 9956500, unaryoperator
+q)n:1000000
+
+/ 2025-06-01D15:16:04.077818700, `:localhost:5010, localsrv/ubuntusrv, 9534600, unaryoperator
+n:1000000
+
+/ 2025-06-01D15:16:05.257220900, `:localhost:5010, localsrv/ubuntusrv, 123234800, unaryoperator
+trade:([]sym:n?`3;time:n?.z.t;price:n?200f;size:n?300) 
+
+/ 2025-06-01D15:16:06.262706400, `:localhost:5010, localsrv/ubuntusrv, 1982390600, 'The response is 22Mb and was cancelled.
+trade
+
+/ 2025-06-01D15:16:38.610640300, `:localhost:5010, localsrv/ubuntusrv, 96468700, 'trade/. OS reports: Directory not empty
+`:trade/ 1: .Q.en[`:.;trade]
+
+/ 2025-06-01D15:16:49.137277800, `:localhost:5010, localsrv/ubuntusrv, 56693000, 'trade/. OS reports: Directory not empty
+`:trade/ 1: trade
+
+/ 2025-06-01D15:16:54.519500100, `:localhost:5010, localsrv/ubuntusrv, 9060900, 'type
+`:trade/ set trade
+
+/ 2025-06-01D15:17:05.191623100, `:localhost:5010, localsrv/ubuntusrv, 8284700, '.Q.end
+`:trade/ set .Q.end[`:.;trade]
+
+/ 2025-06-01D15:17:10.907917200, `:localhost:5010, localsrv/ubuntusrv, 9501700, '.Q.end
+.Q.end
+
+/ 2025-06-01D15:17:14.969428700, `:localhost:5010, localsrv/ubuntusrv, 79518200, string
+`:trade/ set .Q.en[`:.;trade]
+

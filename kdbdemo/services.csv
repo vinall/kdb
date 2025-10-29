@@ -1,0 +1,3 @@
+srvname,src,args,srvtype
+tp01,tick.q,sym . -p 5001,TP
+rt01,tick/r.q,,RT
