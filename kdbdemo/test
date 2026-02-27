@@ -1,4 +1,12 @@
-.cbmgr.sub .cbargs.fargs[`tp01;`trade;`trade_dest;{x}];
-.cbmgr.sub .cbargs.fargs[`;`trade_dest;`trade_dest1;{x}];
 
-data:(); `data upsert flip (`time`sym`price`size)!(4?.z.P;4?`4;4?10.0;4?100i)
+system "l /home/vinay/newkdb/kdbdemo/cbmgr.q";
+
+.cbmgr.sub .cbargs.fargs[`;`tr;`tr_op;{x};{select sum size by sym from x}];
+.cbmgr.sub .cbargs.fargs[`;`tr_op;`tr_fin;{x};{select from x where sym=`appl}];
+
+.z.ts : {
+  -1 "Generating data";
+  n:first 1?100;
+  `tr upsert ([] time:n#.z.T;sym:n?`appl`msft`csco`tsla; size:n?10.0);
+  .cbmgr.pub[`tr;tr];
+ };
