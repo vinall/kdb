@@ -2,8 +2,8 @@
 
 \d .cbargs
 
-fargs : {[srv;ts;td;f]
-    kargs[srv;ts;td;f;f;`]
+fargs : {[srv;tsrc;tdest;fsrc;fdest]
+    kargs[srv;tsrc;tdest;fsrc;fdest;`]
  };
 
 kargs : {[srv;tsrc;tdest;fsrc;fdest;k]
